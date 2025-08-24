@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,10 +114,10 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
-            color: #fff !important;
-            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%) !important;
+            color: #fff;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
             background-attachment: fixed;
             min-height: 100vh;
             position: relative;
@@ -129,9 +130,9 @@
         /* Force background on mobile */
         @supports (-webkit-touch-callout: none) {
             body {
-                background-attachment: scroll !important;
-                background-repeat: no-repeat !important;
-                background-size: cover !important;
+                background-attachment: scroll;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
         
@@ -187,7 +188,7 @@
             pointer-events: none;
         }
 
-        /* Enhanced Navigation */
+        /* Enhanced Navigation - FIXED to match blog page */
         .navbar {
             position: fixed;
             top: 20px;
@@ -221,7 +222,7 @@
         }
 
         .nav-links a {
-            color: white !important;
+            color: white;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
@@ -231,8 +232,9 @@
             white-space: nowrap;
         }
 
-        .nav-links a:hover {
-            color: #64ffda !important;
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #64ffda;
             text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
 
@@ -249,7 +251,8 @@
             border-radius: 1px;
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
         }
 
@@ -382,10 +385,9 @@
         /* Enhanced Typography */
         .hero h1 {
             font-size: 4.5rem;
-            color: #fff !important;
+            color: #fff;
             margin-bottom: 1.5rem;
             font-weight: 900;
-            font-family: 'Inter', sans-serif !important;
             background: linear-gradient(135deg, #64ffda 0%, #00bcd4 25%, #03a9f4 50%, #2196f3 75%, #64ffda 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
@@ -415,20 +417,18 @@
 
         .hero .subtitle {
             font-size: 1.8rem;
-            color: #64ffda !important;
+            color: #64ffda;
             margin-bottom: 1rem;
             font-weight: 700;
-            font-family: 'Inter', sans-serif !important;
             animation: subtitleFadeIn 1.5s ease-out 0.6s both;
             text-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
         }
 
         .hero .education {
             font-size: 1.4rem;
-            color: #00bcd4 !important;
+            color: #00bcd4;
             margin-bottom: 1.5rem;
             font-weight: 600;
-            font-family: 'Inter', sans-serif !important;
             animation: educationFadeIn 1.5s ease-out 0.8s both;
             text-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
         }
@@ -456,11 +456,10 @@
         }
 
         .hero .location {
-            color: rgba(255, 255, 255, 0.9) !important;
+            color: rgba(255, 255, 255, 0.9);
             font-size: 1.3rem;
             margin-bottom: 3.5rem;
             font-weight: 500;
-            font-family: 'Inter', sans-serif !important;
             animation: locationFadeIn 1.5s ease-out 1s both;
         }
 
@@ -502,13 +501,12 @@
             gap: 0.8rem;
             padding: 1.2rem 2.5rem;
             background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(0, 188, 212, 0.08));
-            color: white !important;
+            color: white;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-weight: 700;
             font-size: 1.1rem;
-            font-family: 'Inter', sans-serif !important;
             border: 2px solid rgba(100, 255, 218, 0.2);
             position: relative;
             overflow: hidden;
@@ -545,12 +543,11 @@
             padding: 1.5rem 4rem;
             background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 25%, #ff6b6b 50%, #ff4757 75%, #ff6b6b 100%);
             background-size: 300% 300%;
-            color: white !important;
+            color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 800;
             font-size: 1.3rem;
-            font-family: 'Inter', sans-serif !important;
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
@@ -658,12 +655,11 @@
 
         .section h2 {
             font-size: 3rem;
-            color: #fff !important;
+            color: #fff;
             margin-bottom: 2.5rem;
             text-align: center;
             position: relative;
             font-weight: 800;
-            font-family: 'Inter', sans-serif !important;
             background: linear-gradient(135deg, #64ffda, #00bcd4, #03a9f4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -687,11 +683,10 @@
         .about-text {
             font-size: 1.3rem;
             line-height: 2.2;
-            color: rgba(255, 255, 255, 0.95) !important;
+            color: rgba(255, 255, 255, 0.95);
             text-align: justify;
             margin-bottom: 2.5rem;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            font-family: 'Inter', sans-serif !important;
         }
 
         /* Skills Section */
@@ -733,11 +728,10 @@
         }
 
         .skill-category h3 {
-            color: #64ffda !important;
+            color: #64ffda;
             margin-bottom: 2rem;
             font-size: 1.6rem;
             font-weight: 700;
-            font-family: 'Inter', sans-serif !important;
             text-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
         }
 
@@ -749,12 +743,11 @@
 
         .skill-tag {
             background: linear-gradient(135deg, rgba(100, 255, 218, 0.15), rgba(0, 188, 212, 0.15));
-            color: #64ffda !important;
+            color: #64ffda;
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
             font-size: 1rem;
             font-weight: 700;
-            font-family: 'Inter', sans-serif !important;
             border: 2px solid rgba(100, 255, 218, 0.3);
             transition: all 0.4s ease;
             backdrop-filter: blur(10px);
@@ -764,7 +757,7 @@
 
         .skill-tag:hover {
             background: linear-gradient(135deg, #64ffda, #00bcd4);
-            color: #000 !important;
+            color: #000;
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 10px 25px rgba(100, 255, 218, 0.5);
             text-shadow: none;
@@ -810,30 +803,27 @@
 
         .project-title {
             font-size: 1.6rem;
-            color: #64ffda !important;
+            color: #64ffda;
             margin-bottom: 1.5rem;
             font-weight: 800;
-            font-family: 'Inter', sans-serif !important;
             text-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
         }
 
         .project-desc {
-            color: rgba(255, 255, 255, 0.9) !important;
+            color: rgba(255, 255, 255, 0.9);
             line-height: 2;
             margin-bottom: 2rem;
             font-size: 1.1rem;
-            font-family: 'Inter', sans-serif !important;
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            color: #64ffda !important;
+            color: #64ffda;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            font-family: 'Inter', sans-serif !important;
             transition: all 0.4s ease;
             padding: 1rem 2rem;
             border-radius: 25px;
@@ -890,7 +880,6 @@
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1rem;
-            font-family: 'Inter', sans-serif !important;
             background: linear-gradient(135deg, #64ffda, #00bcd4, #03a9f4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -900,17 +889,15 @@
 
         .stat-label {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9) !important;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
-            font-family: 'Inter', sans-serif !important;
         }
 
         .footer {
             text-align: center;
             padding: 4rem 2rem;
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: rgba(255, 255, 255, 0.8);
             font-size: 1.2rem;
-            font-family: 'Inter', sans-serif !important;
             border-top: 2px solid rgba(100, 255, 218, 0.2);
             background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(15px);
@@ -938,7 +925,6 @@
             font-size: 1.8rem;
             color: #000;
             font-weight: bold;
-            font-family: 'Inter', sans-serif !important;
             box-shadow: 0 15px 30px rgba(100, 255, 218, 0.4);
         }
 
@@ -952,17 +938,17 @@
             box-shadow: 0 25px 50px rgba(100, 255, 218, 0.6);
         }
 
-        /* Mobile Responsive Styles */
+        /* Mobile Responsive Styles - SIMPLIFIED FOR IOS FIX */
         @media (max-width: 768px) {
             html {
                 font-size: 14px;
             }
 
             body {
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-                background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%) !important;
-                background-attachment: scroll !important;
-                color: #fff !important;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+                background-attachment: scroll;
+                color: #fff;
                 -webkit-text-size-adjust: 100%;
                 text-size-adjust: 100%;
             }
@@ -987,8 +973,7 @@
 
             .nav-links a {
                 font-size: 0.9rem;
-                font-family: 'Inter', sans-serif !important;
-                color: white !important;
+                color: white;
                 padding: 0.3rem 0;
             }
 
@@ -1005,30 +990,26 @@
 
             .hero h1 {
                 font-size: 2.8rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #fff !important;
+                color: #fff;
                 line-height: 1.2;
                 margin-bottom: 1rem;
             }
 
             .hero .subtitle {
                 font-size: 1.4rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #64ffda !important;
+                color: #64ffda;
                 margin-bottom: 0.8rem;
             }
 
             .hero .education {
                 font-size: 1.2rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #00bcd4 !important;
+                color: #00bcd4;
                 margin-bottom: 1rem;
             }
 
             .hero .location {
                 font-size: 1.1rem;
-                font-family: 'Inter', sans-serif !important;
-                color: rgba(255, 255, 255, 0.9) !important;
+                color: rgba(255, 255, 255, 0.9);
                 margin-bottom: 2rem;
             }
 
@@ -1046,8 +1027,7 @@
             }
 
             .social-links a {
-                font-family: 'Inter', sans-serif !important;
-                color: white !important;
+                color: white;
                 padding: 1rem 2rem;
                 font-size: 1rem;
                 width: 100%;
@@ -1058,8 +1038,7 @@
             .resume-btn {
                 padding: 1.2rem 3rem;
                 font-size: 1.1rem;
-                font-family: 'Inter', sans-serif !important;
-                color: white !important;
+                color: white;
                 width: 100%;
                 max-width: 300px;
                 text-align: center;
@@ -1073,15 +1052,13 @@
 
             .section h2 {
                 font-size: 2.2rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #fff !important;
+                color: #fff;
                 margin-bottom: 2rem;
             }
 
             .about-text {
                 font-size: 1.1rem;
-                font-family: 'Inter', sans-serif !important;
-                color: rgba(255, 255, 255, 0.95) !important;
+                color: rgba(255, 255, 255, 0.95);
                 line-height: 1.8;
                 text-align: left;
             }
@@ -1097,15 +1074,13 @@
 
             .skill-category h3 {
                 font-size: 1.4rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #64ffda !important;
+                color: #64ffda;
                 margin-bottom: 1.5rem;
             }
 
             .skill-tag {
                 font-size: 0.9rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #64ffda !important;
+                color: #64ffda;
                 padding: 0.7rem 1.2rem;
             }
 
@@ -1120,21 +1095,18 @@
 
             .project-title {
                 font-size: 1.4rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #64ffda !important;
+                color: #64ffda;
             }
 
             .project-desc {
                 font-size: 1rem;
-                font-family: 'Inter', sans-serif !important;
-                color: rgba(255, 255, 255, 0.9) !important;
+                color: rgba(255, 255, 255, 0.9);
                 line-height: 1.7;
             }
 
             .project-link {
                 font-size: 1rem;
-                font-family: 'Inter', sans-serif !important;
-                color: #64ffda !important;
+                color: #64ffda;
                 padding: 0.8rem 1.5rem;
             }
 
@@ -1149,20 +1121,17 @@
 
             .stat-number {
                 font-size: 2.5rem;
-                font-family: 'Inter', sans-serif !important;
             }
 
             .stat-label {
                 font-size: 1rem;
-                font-family: 'Inter', sans-serif !important;
-                color: rgba(255, 255, 255, 0.9) !important;
+                color: rgba(255, 255, 255, 0.9);
             }
 
             .footer {
                 padding: 3rem 1.5rem;
                 font-size: 1rem;
-                font-family: 'Inter', sans-serif !important;
-                color: rgba(255, 255, 255, 0.8) !important;
+                color: rgba(255, 255, 255, 0.8);
             }
 
             .scroll-top {
@@ -1180,20 +1149,6 @@
             .project-card:hover,
             .stat-card:hover {
                 transform: none;
-            }
-
-            /* Ensure text remains visible on mobile */
-            * {
-                color: inherit !important;
-                font-family: 'Inter', sans-serif !important;
-            }
-
-            h1, h2, h3, h4, h5, h6 {
-                font-family: 'Inter', sans-serif !important;
-            }
-
-            p, span, div, a {
-                font-family: 'Inter', sans-serif !important;
             }
         }
 
@@ -1243,41 +1198,16 @@
                 font-size: 1rem;
             }
         }
-
-        /* Force styles for WebKit browsers */
-        @supports (-webkit-appearance: none) {
-            body {
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-                color: #fff !important;
-                background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%) !important;
-            }
-
-            * {
-                font-family: 'Inter', sans-serif !important;
-            }
-        }
-
-        /* Force styles for all text elements */
-        h1, h2, h3, h4, h5, h6, p, span, div, a, li, button {
-            font-family: 'Inter', sans-serif !important;
-        }
-
-        /* Ensure proper text rendering on all devices */
-        * {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-        }
     </style>
 </head>
 <body>
     <!-- Animated background particles -->
     <div class="particles"></div>
 
-    <!-- Navigation -->
+    <!-- Navigation - FIXED to match blog page structure -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="/my-portfolio-website/">Home</a></li>
+            <li><a href="/my-portfolio-website/" class="active">Home</a></li>
             <li><a href="/my-portfolio-website/about/">About</a></li>
             <li><a href="/my-portfolio-website/blog/">Blog</a></li>
             <li><a href="/my-portfolio-website/contact/">Contact</a></li>
@@ -1580,6 +1510,7 @@
                 }
             });
         });
+
 
         // Parallax effect for profile image (desktop only)
         window.addEventListener('scroll', function() {
