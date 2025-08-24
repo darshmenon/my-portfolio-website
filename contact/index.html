@@ -42,12 +42,16 @@
             padding: 1rem 2.5rem;
             z-index: 1000;
             border: 1px solid rgba(100, 255, 218, 0.2);
+            width: auto;
+            max-width: calc(100vw - 40px);
         }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -55,6 +59,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -66,6 +71,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 120px 20px 40px;
+            width: 100%;
         }
 
         .page-header {
@@ -106,6 +112,7 @@
             backdrop-filter: blur(20px);
             position: relative;
             animation: fadeInLeft 1s ease-out;
+            width: 100%;
         }
 
         .contact-info::before {
@@ -127,6 +134,7 @@
             backdrop-filter: blur(20px);
             position: relative;
             animation: fadeInRight 1s ease-out;
+            width: 100%;
         }
 
         .contact-form::before {
@@ -145,6 +153,7 @@
             color: #64ffda;
             margin-bottom: 2rem;
             font-weight: 700;
+            text-align: center;
         }
 
         .contact-item {
@@ -156,6 +165,7 @@
             border-radius: 15px;
             border: 1px solid rgba(100, 255, 218, 0.1);
             transition: all 0.3s ease;
+            width: 100%;
         }
 
         .contact-item:hover {
@@ -169,6 +179,11 @@
             margin-right: 1.5rem;
             color: #64ffda;
             min-width: 60px;
+            text-align: center;
+        }
+
+        .contact-details {
+            flex: 1;
         }
 
         .contact-details h3 {
@@ -181,12 +196,14 @@
         .contact-details p {
             color: rgba(255, 255, 255, 0.8);
             font-size: 1.1rem;
+            word-break: break-word;
         }
 
         .contact-details a {
             color: #00bcd4;
             text-decoration: none;
             transition: color 0.3s ease;
+            word-break: break-all;
         }
 
         .contact-details a:hover {
@@ -195,6 +212,7 @@
 
         .form-group {
             margin-bottom: 2rem;
+            width: 100%;
         }
 
         .form-group label {
@@ -214,6 +232,7 @@
             color: white;
             font-size: 1rem;
             transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
         .form-control:focus {
@@ -242,6 +261,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .btn-primary:hover {
@@ -254,6 +274,7 @@
             gap: 1.5rem;
             justify-content: center;
             margin-top: 3rem;
+            flex-wrap: wrap;
         }
 
         .social-link {
@@ -288,6 +309,8 @@
             backdrop-filter: blur(20px);
             position: relative;
             animation: fadeInUp 1s ease-out 0.5s both;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .chess-section::before {
@@ -380,42 +403,206 @@
             }
         }
 
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
+            .navbar {
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0.8rem 1.5rem;
+                max-width: calc(100vw - 20px);
+                width: auto;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
             .container {
                 padding: 100px 15px 20px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .page-header {
+                text-align: center;
+                margin-bottom: 3rem;
             }
 
             .page-header h1 {
                 font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .page-header p {
+                font-size: 1.2rem;
+                text-align: center;
+                padding: 0 10px;
             }
 
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+                width: 100%;
             }
 
             .contact-info,
             .contact-form {
-                padding: 2.5rem;
+                padding: 2rem;
+                width: 100%;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+            }
+
+            .contact-details {
+                text-align: center;
+                width: 100%;
+            }
+
+            .contact-details h3 {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            .contact-details p {
+                font-size: 1rem;
+                text-align: center;
+                word-break: break-word;
+            }
+
+            .form-group {
+                width: 100%;
+            }
+
+            .form-control {
+                width: 100%;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+
+            .btn-primary {
+                width: 100%;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .chess-section {
+                padding: 2rem;
+                margin-top: 2rem;
+                text-align: center;
+            }
+
+            .chess-title {
+                font-size: 1.8rem;
+            }
+
+            .chess-desc {
+                font-size: 1.1rem;
             }
 
             .social-links {
                 flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.6rem 1rem;
+                max-width: calc(100vw - 10px);
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 90px 10px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+                padding: 0 5px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contact-item {
+                padding: 1rem;
+            }
+
+            .chess-section {
+                padding: 1.5rem;
+            }
+
+            .chess-icon {
+                font-size: 3rem;
+            }
+
+            .chess-title {
+                font-size: 1.5rem;
+            }
+
+            .chess-desc {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-<ul class="nav-links">
-    <li><a href="/my-portfolio-website/">Home</a></li>
-    <li><a href="/my-portfolio-website/about/">About</a></li>
-    <li><a href="/my-portfolio-website/blog/">Blog</a></li>
-    <li><a href="/my-portfolio-website/contact/">Contact</a></li>
-</ul>
-
-
-
+        <ul class="nav-links">
+            <li><a href="/my-portfolio-website/">Home</a></li>
+            <li><a href="/my-portfolio-website/about/">About</a></li>
+            <li><a href="/my-portfolio-website/blog/">Blog</a></li>
+            <li><a href="/my-portfolio-website/contact/">Contact</a></li>
+        </ul>
     </nav>
 
     <div class="container">

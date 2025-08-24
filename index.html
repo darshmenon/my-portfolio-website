@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darsh Menon - Robotics Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,15 +14,35 @@
             box-sizing: border-box;
         }
         
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+        
         body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif !important;
             line-height: 1.6;
-            color: #fff;
-            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+            color: #fff !important;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%) !important;
+            background-attachment: fixed;
             min-height: 100vh;
             position: relative;
             scroll-behavior: smooth;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Force background on mobile */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                background-attachment: scroll !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+            }
         }
         
         /* Animated background particles */
@@ -31,6 +54,7 @@
             height: 100%;
             overflow: hidden;
             z-index: -2;
+            pointer-events: none;
         }
         
         .particle {
@@ -70,6 +94,7 @@
                 radial-gradient(ellipse at top right, rgba(0, 188, 212, 0.1) 0%, transparent 50%),
                 radial-gradient(ellipse at center, rgba(255, 107, 107, 0.05) 0%, transparent 70%);
             z-index: -1;
+            pointer-events: none;
         }
 
         /* Enhanced Navigation */
@@ -80,12 +105,14 @@
             transform: translateX(-50%);
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border-radius: 50px;
             padding: 1rem 2.5rem;
             z-index: 1000;
             border: 1px solid rgba(100, 255, 218, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            max-width: calc(100vw - 40px);
         }
 
         .navbar:hover {
@@ -98,20 +125,24 @@
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
-            color: white;
+            color: white !important;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
-            color: #64ffda;
+            color: #64ffda !important;
             text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
 
@@ -136,6 +167,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 80px 20px 20px;
+            width: 100%;
         }
 
         /* Enhanced Hero Section */
@@ -146,6 +178,7 @@
             padding: 5rem 4rem;
             margin-bottom: 4rem;
             backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             box-shadow: 
                 0 40px 80px rgba(0,0,0,0.4),
                 inset 0 1px 0 rgba(255,255,255,0.1);
@@ -178,6 +211,7 @@
             background: conic-gradient(from 0deg, transparent, rgba(100, 255, 218, 0.03), transparent);
             animation: rotate 20s linear infinite;
             z-index: -1;
+            pointer-events: none;
         }
 
         @keyframes gradientFlow {
@@ -258,9 +292,10 @@
         /* Enhanced Typography */
         .hero h1 {
             font-size: 4.5rem;
-            color: #fff;
+            color: #fff !important;
             margin-bottom: 1.5rem;
             font-weight: 900;
+            font-family: 'Inter', sans-serif !important;
             background: linear-gradient(135deg, #64ffda 0%, #00bcd4 25%, #03a9f4 50%, #2196f3 75%, #64ffda 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
@@ -290,9 +325,10 @@
 
         .hero .subtitle {
             font-size: 1.8rem;
-            color: #64ffda;
+            color: #64ffda !important;
             margin-bottom: 1.5rem;
             font-weight: 700;
+            font-family: 'Inter', sans-serif !important;
             animation: subtitleFadeIn 1.5s ease-out 0.6s both;
             text-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
         }
@@ -309,10 +345,11 @@
         }
 
         .hero .location {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9) !important;
             font-size: 1.3rem;
             margin-bottom: 3.5rem;
             font-weight: 500;
+            font-family: 'Inter', sans-serif !important;
             animation: locationFadeIn 1.5s ease-out 0.9s both;
         }
 
@@ -334,6 +371,7 @@
             gap: 2rem;
             margin-bottom: 4rem;
             animation: socialFadeIn 1.5s ease-out 1.2s both;
+            flex-wrap: wrap;
         }
 
         @keyframes socialFadeIn {
@@ -353,16 +391,18 @@
             gap: 0.8rem;
             padding: 1.2rem 2.5rem;
             background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(0, 188, 212, 0.08));
-            color: white;
+            color: white !important;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-weight: 700;
             font-size: 1.1rem;
+            font-family: 'Inter', sans-serif !important;
             border: 2px solid rgba(100, 255, 218, 0.2);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .social-links a::before {
@@ -394,11 +434,12 @@
             padding: 1.5rem 4rem;
             background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 25%, #ff6b6b 50%, #ff4757 75%, #ff6b6b 100%);
             background-size: 300% 300%;
-            color: white;
+            color: white !important;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 800;
             font-size: 1.3rem;
+            font-family: 'Inter', sans-serif !important;
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
@@ -411,6 +452,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         @keyframes resumeFadeIn {
@@ -472,6 +514,7 @@
             padding: 4rem;
             margin-bottom: 4rem;
             backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             box-shadow: 
                 0 30px 60px rgba(0,0,0,0.3),
                 inset 0 1px 0 rgba(255,255,255,0.1);
@@ -504,11 +547,12 @@
 
         .section h2 {
             font-size: 3rem;
-            color: #fff;
+            color: #fff !important;
             margin-bottom: 2.5rem;
             text-align: center;
             position: relative;
             font-weight: 800;
+            font-family: 'Inter', sans-serif !important;
             background: linear-gradient(135deg, #64ffda, #00bcd4, #03a9f4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -529,20 +573,20 @@
             box-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
         }
 
-        /* Rest of your existing styles with minor enhancements... */
         .about-text {
             font-size: 1.3rem;
             line-height: 2.2;
-            color: rgba(255, 255, 255, 0.95);
+            color: rgba(255, 255, 255, 0.95) !important;
             text-align: justify;
             margin-bottom: 2.5rem;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            font-family: 'Inter', sans-serif !important;
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -556,6 +600,7 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
         }
 
         .skill-category::before {
@@ -577,10 +622,11 @@
         }
 
         .skill-category h3 {
-            color: #64ffda;
+            color: #64ffda !important;
             margin-bottom: 2rem;
             font-size: 1.6rem;
             font-weight: 700;
+            font-family: 'Inter', sans-serif !important;
             text-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
         }
 
@@ -592,20 +638,22 @@
 
         .skill-tag {
             background: linear-gradient(135deg, rgba(100, 255, 218, 0.15), rgba(0, 188, 212, 0.15));
-            color: #64ffda;
+            color: #64ffda !important;
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
             font-size: 1rem;
             font-weight: 700;
+            font-family: 'Inter', sans-serif !important;
             border: 2px solid rgba(100, 255, 218, 0.3);
             transition: all 0.4s ease;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             cursor: pointer;
         }
 
         .skill-tag:hover {
             background: linear-gradient(135deg, #64ffda, #00bcd4);
-            color: #000;
+            color: #000 !important;
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 10px 25px rgba(100, 255, 218, 0.5);
             text-shadow: none;
@@ -614,7 +662,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
@@ -628,6 +676,7 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
         }
 
         .project-card::before {
@@ -650,27 +699,30 @@
 
         .project-title {
             font-size: 1.6rem;
-            color: #64ffda;
+            color: #64ffda !important;
             margin-bottom: 1.5rem;
             font-weight: 800;
+            font-family: 'Inter', sans-serif !important;
             text-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
         }
 
         .project-desc {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9) !important;
             line-height: 2;
             margin-bottom: 2rem;
             font-size: 1.1rem;
+            font-family: 'Inter', sans-serif !important;
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            color: #64ffda;
+            color: #64ffda !important;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
+            font-family: 'Inter', sans-serif !important;
             transition: all 0.4s ease;
             padding: 1rem 2rem;
             border-radius: 25px;
@@ -688,7 +740,7 @@
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -701,6 +753,7 @@
             border-radius: 25px;
             transition: all 0.4s ease;
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             position: relative;
             overflow: hidden;
         }
@@ -726,6 +779,7 @@
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif !important;
             background: linear-gradient(135deg, #64ffda, #00bcd4, #03a9f4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -735,18 +789,21 @@
 
         .stat-label {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9) !important;
             font-weight: 600;
+            font-family: 'Inter', sans-serif !important;
         }
 
         .footer {
             text-align: center;
             padding: 4rem 2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.8) !important;
             font-size: 1.2rem;
+            font-family: 'Inter', sans-serif !important;
             border-top: 2px solid rgba(100, 255, 218, 0.2);
             background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             font-weight: 500;
         }
 
@@ -770,6 +827,7 @@
             font-size: 1.8rem;
             color: #000;
             font-weight: bold;
+            font-family: 'Inter', sans-serif !important;
             box-shadow: 0 15px 30px rgba(100, 255, 218, 0.4);
         }
 
@@ -783,59 +841,310 @@
             box-shadow: 0 25px 50px rgba(100, 255, 218, 0.6);
         }
 
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+                background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%) !important;
+                background-attachment: scroll !important;
+                color: #fff !important;
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+            }
+
             .navbar {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                transform: none;
                 padding: 0.8rem 1.5rem;
+                max-width: calc(100vw - 20px);
+                width: calc(100% - 20px);
+                border-radius: 25px;
             }
 
             .nav-links {
-                gap: 1.5rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .nav-links a {
                 font-size: 0.9rem;
+                font-family: 'Inter', sans-serif !important;
+                color: white !important;
+                padding: 0.3rem 0;
+            }
+
+            .container {
+                padding: 90px 15px 20px;
+                width: 100%;
+            }
+
+            .hero {
+                padding: 3rem 2rem;
+                border-radius: 25px;
+                margin-bottom: 2.5rem;
             }
 
             .hero h1 {
                 font-size: 2.8rem;
+                font-family: 'Inter', sans-serif !important;
+                color: #fff !important;
+                line-height: 1.2;
+                margin-bottom: 1rem;
             }
 
             .hero .subtitle {
                 font-size: 1.4rem;
+                font-family: 'Inter', sans-serif !important;
+                color: #64ffda !important;
+                margin-bottom: 1rem;
             }
 
-            .container {
-                padding: 60px 15px 20px;
+            .hero .location {
+                font-size: 1.1rem;
+                font-family: 'Inter', sans-serif !important;
+                color: rgba(255, 255, 255, 0.9) !important;
+                margin-bottom: 2rem;
             }
 
-            .section {
-                padding: 2.5rem;
+            .profile-img {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 2rem;
             }
 
             .social-links {
                 flex-direction: column;
                 align-items: center;
                 gap: 1.5rem;
+                margin-bottom: 3rem;
             }
 
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .profile-img {
-                width: 180px;
-                height: 180px;
+            .social-links a {
+                font-family: 'Inter', sans-serif !important;
+                color: white !important;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
             }
 
             .resume-btn {
                 padding: 1.2rem 3rem;
                 font-size: 1.1rem;
+                font-family: 'Inter', sans-serif !important;
+                color: white !important;
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
             }
+
+            .section {
+                padding: 2.5rem 1.5rem;
+                border-radius: 25px;
+                margin-bottom: 2.5rem;
+            }
+
+            .section h2 {
+                font-size: 2.2rem;
+                font-family: 'Inter', sans-serif !important;
+                color: #fff !important;
+                margin-bottom: 2rem;
+            }
+
+            .about-text {
+                font-size: 1.1rem;
+                font-family: 'Inter', sans-serif !important;
+                color: rgba(255, 255, 255, 0.95) !important;
+                line-height: 1.8;
+                text-align: left;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .skill-category {
+                padding: 2rem 1.5rem;
+            }
+
+            .skill-category h3 {
+                font-size: 1.4rem;
+                font-family: 'Inter', sans-serif !important;
+                color: #64ffda !important;
+                margin-bottom: 1.5rem;
+            }
+
+            .skill-tag {
+                font-size: 0.9rem;
+                font-family: 'Inter', sans-serif !important;
+                color: #64ffda !important;
+                padding: 0.7rem 1.2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.4rem;
+                font-family: 'Inter', sans-serif !important;
+                color: #64ffda !important;
+            }
+
+            .project-desc {
+                font-size: 1rem;
+                font-family: 'Inter', sans-serif !important;
+                color: rgba(255, 255, 255, 0.9) !important;
+                line-height: 1.7;
+            }
+
+            .project-link {
+                font-size: 1rem;
+                font-family: 'Inter', sans-serif !important;
+                color: #64ffda !important;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .stat-card {
+                padding: 2rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+                font-family: 'Inter', sans-serif !important;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+                font-family: 'Inter', sans-serif !important;
+                color: rgba(255, 255, 255, 0.9) !important;
+            }
+
+            .footer {
+                padding: 3rem 1.5rem;
+                font-size: 1rem;
+                font-family: 'Inter', sans-serif !important;
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            /* Disable hover effects on mobile */
+            .social-links a:hover,
+            .resume-btn:hover,
+            .skill-category:hover,
+            .project-card:hover,
+            .stat-card:hover {
+                transform: none;
+            }
+
+            /* Ensure text remains visible on mobile */
+            * {
+                color: inherit !important;
+                font-family: 'Inter', sans-serif !important;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Inter', sans-serif !important;
+            }
+
+            p, span, div, a {
+                font-family: 'Inter', sans-serif !important;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            html {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.1;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .social-links a {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .resume-btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Force styles for WebKit browsers */
+        @supports (-webkit-appearance: none) {
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+                color: #fff !important;
+                background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%) !important;
+            }
+
+            * {
+                font-family: 'Inter', sans-serif !important;
+            }
+        }
+
+        /* Force styles for all text elements */
+        h1, h2, h3, h4, h5, h6, p, span, div, a, li, button {
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        /* Ensure proper text rendering on all devices */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
     </style>
 </head>
@@ -845,14 +1154,12 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-<ul class="nav-links">
-    <li><a href="/my-portfolio-website/">Home</a></li>
-    <li><a href="/my-portfolio-website/about/">About</a></li>
-    <li><a href="/my-portfolio-website/blog/">Blog</a></li>
-    <li><a href="/my-portfolio-website/contact/">Contact</a></li>
-</ul>
-
-
+        <ul class="nav-links">
+            <li><a href="/my-portfolio-website/">Home</a></li>
+            <li><a href="/my-portfolio-website/about/">About</a></li>
+            <li><a href="/my-portfolio-website/blog/">Blog</a></li>
+            <li><a href="/my-portfolio-website/contact/">Contact</a></li>
+        </ul>
     </nav>
 
     <div class="container">
@@ -939,40 +1246,40 @@
         </section>
 
         <!-- Featured Projects -->
-<section class="section" id="featured-projects">
-    <h2>Signature Projects</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <h3 class="project-title">🦾 Autonomous Pick-and-Place Robot</h3>
-            <p class="project-desc">
-                Vision-powered robotic arm system using UR5 + Robotiq gripper with ROS 2, MoveIt 2, and Gazebo. Features advanced inverse kinematics, collision-aware motion planning, and real-time object detection for precise manipulation tasks.
-            </p>
-            <a href="https://github.com/darshmenon/UR3_ROS2_PICK_AND_PLACE" target="_blank" class="project-link">
-                Explore Project →
-            </a>
-        </div>
-        
-        <div class="project-card">
-            <h3 class="project-title">🧭 Intelligent Navigation System</h3>
-            <p class="project-desc">
-                Complete autonomous navigation pipeline from SLAM mapping to dynamic obstacle avoidance using Nav2, SLAM Toolbox, and advanced path planning algorithms with real-time LiDAR processing.
-            </p>
-            <a href="https://github.com/darshmenon/rosnav" target="_blank" class="project-link">
-                View Details →
-            </a>
-        </div>
-        
-        <div class="project-card">
-            <h3 class="project-title">🤖 HandBot ROS2 Ecosystem</h3>
-            <p class="project-desc">
-                Comprehensive ROS2-based manipulation system with advanced gripper control, perception pipeline, and task orchestration for complex multi-step robotics operations.
-            </p>
-            <a href="https://github.com/darshmenon/handbot_ros2" target="_blank" class="project-link">
-                Discover More →
-            </a>
-        </div>
-    </div>
-</section>
+        <section class="section" id="featured-projects">
+            <h2>Signature Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">🦾 Autonomous Pick-and-Place Robot</h3>
+                    <p class="project-desc">
+                        Vision-powered robotic arm system using UR5 + Robotiq gripper with ROS 2, MoveIt 2, and Gazebo. Features advanced inverse kinematics, collision-aware motion planning, and real-time object detection for precise manipulation tasks.
+                    </p>
+                    <a href="https://github.com/darshmenon/UR3_ROS2_PICK_AND_PLACE" target="_blank" class="project-link">
+                        Explore Project →
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">🧭 Intelligent Navigation System</h3>
+                    <p class="project-desc">
+                        Complete autonomous navigation pipeline from SLAM mapping to dynamic obstacle avoidance using Nav2, SLAM Toolbox, and advanced path planning algorithms with real-time LiDAR processing.
+                    </p>
+                    <a href="https://github.com/darshmenon/rosnav" target="_blank" class="project-link">
+                        View Details →
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">🤖 HandBot ROS2 Ecosystem</h3>
+                    <p class="project-desc">
+                        Comprehensive ROS2-based manipulation system with advanced gripper control, perception pipeline, and task orchestration for complex multi-step robotics operations.
+                    </p>
+                    <a href="https://github.com/darshmenon/handbot_ros2" target="_blank" class="project-link">
+                        Discover More →
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Achievement Stats -->
         <section class="section">
@@ -1028,7 +1335,7 @@
             const particles = document.querySelector('.particles');
             const colors = ['#64ffda', '#00bcd4', '#03a9f4', '#2196f3'];
             
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 30; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
@@ -1096,30 +1403,12 @@
             observer.observe(section);
         });
 
-        // Typing effect for the main title
-        function typeWriter(element, text, speed = 120) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                } else {
-                    // Add cursor blink effect
-                    setTimeout(() => {
-                        element.style.borderRight = '3px solid #64ffda';
-                        element.style.animation = 'blink 1s infinite';
-                    }, 500);
-                }
-            }
-            type();
-        }
-
         // Enhanced button interactions
         document.querySelectorAll('.resume-btn, .social-links a, .project-link').forEach(element => {
             element.addEventListener('mouseenter', function() {
-                this.style.filter = 'brightness(1.1) contrast(1.1)';
+                if (window.innerWidth > 768) {
+                    this.style.filter = 'brightness(1.1) contrast(1.1)';
+                }
             });
             
             element.addEventListener('mouseleave', function() {
@@ -1127,84 +1416,71 @@
             });
 
             element.addEventListener('click', function(e) {
-                // Create ripple effect
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.4);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.8s linear;
-                    pointer-events: none;
-                `;
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 800);
+                // Create ripple effect only on desktop
+                if (window.innerWidth > 768) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255, 255, 255, 0.4);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.8s linear;
+                        pointer-events: none;
+                    `;
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 800);
+                }
             });
         });
 
-        // Parallax effect for profile image
+        // Parallax effect for profile image (desktop only)
         window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const profileImg = document.querySelector('.profile-img');
-            const navbar = document.querySelector('.navbar');
-            const parallax = scrolled * 0.05;
-            
-            if (profileImg) {
-                profileImg.style.transform = `translateY(${parallax}px)`;
-            }
+            if (window.innerWidth > 768) {
+                const scrolled = window.pageYOffset;
+                const profileImg = document.querySelector('.profile-img');
+                const navbar = document.querySelector('.navbar');
+                const parallax = scrolled * 0.05;
+                
+                if (profileImg) {
+                    profileImg.style.transform = `translateY(${parallax}px)`;
+                }
 
-            // Navbar background opacity based on scroll
-            if (navbar) {
-                const opacity = Math.min(scrolled / 500, 0.95);
-                navbar.style.background = `rgba(255, 255, 255, ${0.08 + opacity * 0.1})`;
-                navbar.style.backdropFilter = `blur(${20 + scrolled * 0.02}px)`;
+                // Navbar background opacity based on scroll
+                if (navbar) {
+                    const opacity = Math.min(scrolled / 500, 0.95);
+                    navbar.style.background = `rgba(255, 255, 255, ${0.08 + opacity * 0.1})`;
+                    navbar.style.backdropFilter = `blur(${20 + scrolled * 0.02}px)`;
+                }
             }
-        });
-
-        // Skill tag hover effects
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.animation = 'skillBounce 0.6s ease';
-            });
-            
-            tag.addEventListener('animationend', function() {
-                this.style.animation = '';
-            });
         });
 
         // Initialize page
         window.addEventListener('load', function() {
             createParticles();
             
-            // Staggered animation for hero elements
-            setTimeout(() => {
-                const titleElement = document.querySelector('.hero h1');
-                if (titleElement) {
-                    typeWriter(titleElement, 'Darsh Menon', 150);
-                }
-            }, 2000);
-
-            // Add dynamic glow effect to stats
-            document.querySelectorAll('.stat-number').forEach((stat, index) => {
-                setTimeout(() => {
-                    stat.style.animation = `counterUp 2s ease-out, statGlow 3s ease-in-out infinite ${index * 0.2}s`;
-                }, 1000 + index * 200);
-            });
+            // Add dynamic glow effect to stats (desktop only)
+            if (window.innerWidth > 768) {
+                document.querySelectorAll('.stat-number').forEach((stat, index) => {
+                    setTimeout(() => {
+                        stat.style.animation = `counterUp 2s ease-out, statGlow 3s ease-in-out infinite ${index * 0.2}s`;
+                    }, 1000 + index * 200);
+                });
+            }
         });
 
         // Add CSS animations via JavaScript
@@ -1259,6 +1535,14 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Force font family on all elements after DOM load
+        document.addEventListener('DOMContentLoaded', function() {
+            const allElements = document.querySelectorAll('*');
+            allElements.forEach(element => {
+                element.style.fontFamily = 'Inter, sans-serif';
+            });
+        });
     </script>
 </body>
 </html>
