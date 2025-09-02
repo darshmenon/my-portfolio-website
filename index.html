@@ -126,7 +126,65 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+/* Replace your existing body CSS with this: */
 
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    
+    /* iPhone-friendly background */
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+    background-attachment: scroll; /* Changed from fixed */
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    min-height: 100vh;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Specific fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        /* Add a solid fallback */
+        background-color: #0f0f1a !important;
+    }
+    
+    /* Ensure full height on iOS */
+    html, body {
+        height: 100%;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Alternative method - detect iOS specifically */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    _::-webkit-full-page-media, _:future, :root body {
+        background-attachment: scroll !important;
+        background-color: #0f0f1a !important;
+    }
+}
+
+/* Fallback for very old iOS versions */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+    z-index: -999;
+    pointer-events: none;
+}
         /* Force background on mobile */
         @supports (-webkit-touch-callout: none) {
             body {
