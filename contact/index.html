@@ -114,6 +114,7 @@
             z-index: -1;
         }
 
+        /* ENHANCED RESPONSIVE NAVBAR - MATCHING ABOUT PAGE */
         .navbar {
             position: fixed;
             top: 20px;
@@ -121,28 +122,67 @@
             transform: translateX(-50%);
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border-radius: 50px;
             padding: 1rem 2.5rem;
             z-index: 1000;
             border: 1px solid rgba(100, 255, 218, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            max-width: calc(100vw - 40px);
         }
 
+        /* Add hover effect for navbar */
+        .navbar:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(100, 255, 218, 0.4);
+            transform: translateX(-50%) translateY(-2px);
+        }
+
+        /* Enhanced nav-links styling */
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+            white-space: nowrap;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: #64ffda;
             text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+        }
+
+        /* Add the underline animation effect */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #64ffda, #00bcd4);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
         }
 
         .container {
@@ -481,8 +521,64 @@
             }
         }
 
-        /* Mobile Responsive Styles - FIXED TO MATCH BLOG PAGE */
+        /* Mobile responsive adjustments for enhanced navbar */
         @media (max-width: 768px) {
+            .navbar {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                transform: none;
+                padding: 0.8rem 1.5rem;
+                max-width: calc(100vw - 20px);
+                width: calc(100% - 20px);
+                border-radius: 25px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .navbar:hover {
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(100, 255, 218, 0.4);
+                transform: translateY(-1px);
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                color: white;
+                padding: 0.3rem 0;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                color: #64ffda;
+                text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+            }
+
+            /* Keep the underline effect on mobile too */
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #64ffda, #00bcd4);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+                border-radius: 1px;
+            }
+
+            .nav-links a:hover::after,
+            .nav-links a.active::after {
+                width: 100%;
+            }
+
             .container {
                 padding: 100px 15px 20px;
             }
