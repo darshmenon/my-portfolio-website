@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Darsh Menon - Robotics Engineer | Featured robotics projects including RL bipedal walking, mobile manipulation, and navigation systems.">
+    <meta name="keywords" content="Darsh Menon, Robotics Projects, ROS 2, Reinforcement Learning, Mobile Manipulation, Computer Vision, Bipedal Walking">
+    <meta name="author" content="Darsh Menon">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Projects - Darsh Menon | Robotics Engineer">
+    <meta property="og:description" content="Cutting-edge robotics projects showcasing RL, manipulation, navigation, and AI capabilities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darshmenon.github.io/my-portfolio-website/projects/">
+    
+    <title>Projects - Darsh Menon | Robotics Engineer</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, rgba(100, 255, 218, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        /* Enhanced particles effect */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #64ffda, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(100, 255, 218, 0.3), transparent),
+                radial-gradient(1px 1px at 90px 40px, #00bcd4, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(0, 188, 212, 0.3), transparent),
+                radial-gradient(2px 2px at 160px 30px, #64ffda, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 20s linear infinite;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        @keyframes sparkle {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-100px); }
+        }
+
+        /* ENHANCED RESPONSIVE NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            z-index: 1000;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            max-width: calc(100vw - 40px);
+        }
+
+        .navbar:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(100, 255, 218, 0.4);
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 15px 40px rgba(100, 255, 218, 0.15);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #64ffda;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #64ffda, #00bcd4);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Container and Header */
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 120px 20px 40px; 
+        }
+        
+        .page-header { 
+            text-align: center; 
+            margin-bottom: 4rem; 
+            animation: fadeInDown 1s ease-out; 
+        }
+        
+        .page-header h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #64ffda, #00bcd4, #03a9f4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+        }
+        
+        .page-header p { 
+            font-size: 1.4rem; 
+            color: rgba(255,255,255,0.8); 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+
+        /* Filter Navigation */
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: 30px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #64ffda, #00bcd4);
+            color: #000000;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(100, 255, 218, 0.3);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 30px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            backdrop-filter: blur(20px);
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #64ffda, #00bcd4, #03a9f4);
+            border-radius: 30px 30px 0 0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(100, 255, 218, 0.3);
+            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+        }
+
+        .featured-project {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 500px;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, #64ffda, #00bcd4);
+            color: #000000;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .project-image {
+            position: relative;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(0,188,212,0.08));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            overflow: hidden;
+            border-right: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .featured-project .project-image {
+            min-height: 500px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            border-radius: 0;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-image iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            min-height: 250px;
+        }
+
+        .featured-project .project-image iframe {
+            min-height: 500px;
+        }
+
+        .image-placeholder {
+            font-size: 2rem;
+            opacity: 0.7;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(0, 188, 212, 0.1));
+            border-radius: 15px;
+            border: 2px dashed rgba(100, 255, 218, 0.3);
+            margin: 2rem;
+        }
+
+        .project-content {
+            padding: 2.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            width: fit-content;
+        }
+
+        .status-completed {
+            background: rgba(100, 255, 218, 0.15);
+            color: #64ffda;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+        }
+
+        .status-progress {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .project-desc {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1.8rem;
+            flex-grow: 1;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .tech-tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            padding: 0.8rem 1.6rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .project-link:first-child {
+            background: linear-gradient(135deg, #64ffda, #00bcd4);
+            color: #000000;
+        }
+
+        .project-link.demo {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .project-link.coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: rgba(128, 128, 128, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        .project-link:hover:not(.coming-soon) {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-link:first-child:hover:not(.coming-soon) {
+            box-shadow: 0 15px 30px rgba(100, 255, 218, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown { 
+            from {opacity:0; transform:translateY(-50px);} 
+            to {opacity:1; transform:translateY(0);} 
+        }
+        
+        @keyframes fadeInUp { 
+            from {opacity:0; transform:translateY(50px);} 
+            to {opacity:1; transform:translateY(0);} 
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+        .project-card:nth-child(7) { animation-delay: 0.7s; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                transform: none;
+                padding: 0.8rem 1.5rem;
+                max-width: calc(100vw - 20px);
+                width: calc(100% - 20px);
+                border-radius: 25px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .navbar:hover {
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(100, 255, 218, 0.4);
+                transform: translateY(-1px);
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                color: white;
+                padding: 0.3rem 0;
+            }
+
+            .container { 
+                padding: 100px 15px 20px; 
+            }
+            
+            .page-header h1 { 
+                font-size: 2.5rem; 
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .featured-project {
+                grid-template-columns: 1fr;
+            }
+
+            .project-content {
+                padding: 1.8rem;
+            }
+
+            .filter-nav {
+                padding: 0 1rem;
+                gap: 0.8rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .project-image {
+                border-right: none;
+                border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Navigation matching About page -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/my-portfolio-website/">Home</a></li>
+            <li><a href="/my-portfolio-website/about/">About</a></li>
+            <li><a href="/my-portfolio-website/projects/" class="active">Projects</a></li>
+            <li><a href="/my-portfolio-website/blog/">Blog</a></li>
+            <li><a href="/my-portfolio-website/contact/">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Enhanced Header -->
+        <div class="page-header">
+            <h1>Featured Projects</h1>
+            <p>Cutting-edge robotics and AI projects showcasing advanced manipulation, navigation, reinforcement learning, and autonomous systems capabilities</p>
+        </div>
+
+        <!-- Filter Navigation -->
+        <div class="filter-nav">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="robotics">Robotics</button>
+            <button class="filter-btn" data-filter="rl">Reinforcement Learning</button>
+            <button class="filter-btn" data-filter="manipulation">Manipulation</button>
+            <button class="filter-btn" data-filter="navigation">Navigation</button>
+            <button class="filter-btn" data-filter="vision">Computer Vision</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- Featured Project: RL Bipedal Walking -->
+            <div class="project-card featured-project" data-categories="robotics,rl">
+                <div class="featured-badge">🌟 Featured</div>
+                <div class="project-image">
+                    <img src="https://drive.google.com/uc?export=view&id=1yYMF5bmQIk8Q1JZ3tBAgS_WaCOIw8mTp" alt="RL Bipedal Walking Robot" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <div class="project-status status-completed">✅ Completed</div>
+                    <h3 class="project-title">RL Bipedal Walking Robot</h3>
+                    <p class="project-desc">
+                        A comprehensive reinforcement learning framework for training a bipedal humanoid robot to walk using cutting-edge AI techniques. This project represents the intersection of robotics, machine learning, and simulation technology, featuring a custom 6-DOF bipedal robot trained using PyTorch PPO (Proximal Policy Optimization) algorithm.
+                        <br><br>
+                        The system includes advanced reward engineering for stability and natural locomotion, real-time training visualization with TensorBoard integration, automatic model checkpointing, and seamless integration between Gazebo physics simulation and ROS 2 Jazzy. The robot learns to maintain balance, adapt to different terrains, and develop human-like walking gaits through trial and error.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ROS 2 Jazzy</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Gazebo</span>
+                        <span class="tech-tag">Reinforcement Learning</span>
+                        <span class="tech-tag">PPO Algorithm</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">URDF</span>
+                        <span class="tech-tag">TensorBoard</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/darshmenon/rl-bipedal-walking" target="_blank" rel="noopener noreferrer" class="project-link">
+                            🔗 GitHub Repository
+                        </a>
+                        <div class="project-link coming-soon">
+                            🎥 Demo Coming Soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HandBot ROS2 System -->
+            <div class="project-card" data-categories="robotics,manipulation">
+                <div class="project-image">
+                    <img src="https://drive.google.com/uc?export=view&id=1r63Sw9w8_P95lZKZqz__lGzyzPE3bFSt" alt="HandBot ROS2 System" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <div class="project-status status-completed">✅ Completed</div>
+                    <h3 class="project-title">🤖 HandBot ROS2 Ecosystem</h3>
+                    <p class="project-desc">
+                        A comprehensive ROS2-based manipulation framework featuring advanced gripper control, perception pipeline integration, and task orchestration capabilities. The system is designed for complex multi-step robotics operations with a modular architecture that ensures easy extensibility and scalability for various robotic applications.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ROS 2</span>
+                        <span class="tech-tag">Gripper Control</span>
+                        <span class="tech-tag">Perception</span>
+                        <span class="tech-tag">Task Planning</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/darshmenon/handbot_ros2" target="_blank" rel="noopener noreferrer" class="project-link">
+                            🔗 GitHub Repository
+                        </a>
+                        <a href="https://drive.google.com/file/d/1-33rU6lY8hnH4c5d-QUsQb4vG8tg7dTH/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link demo">
+                            🎥 View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UR3 Pick and Place -->
+            <div class="project-card" data-categories="robotics,manipulation,vision">
+                <div class="project-image">
+                    <img src="https://drive.google.com/uc?export=view&id=1NF2eBrrIjU7cdMyZ3Vw_K_FRgcgaBLg1" alt="UR3 Pick and Place Robot" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <div class="project-status status-completed">✅ Completed</div>
+                    <h3 class="project-title">🦾 UR3 Pick-and-Place Robot</h3>
+                    <p class="project-desc">
+                        Advanced robotic manipulation system using UR3 robotic arm with Robotiq gripper, integrated with ROS 2, MoveIt 2, and Gazebo simulation. Features computer vision-based object detection, inverse kinematics, collision-aware motion planning, and precise manipulation capabilities for industrial automation applications.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ROS 2</span>
+                        <span class="tech-tag">MoveIt 2</span>
+                        <span class="tech-tag">Gazebo</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Robotiq Gripper</span>
+                        <span class="tech-tag">UR3 Robot</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/darshmenon/UR3_ROS2_PICK_AND_PLACE" target="_blank" rel="noopener noreferrer" class="project-link">
+                            🔗 GitHub Repository
+                        </a>
+                        <a href="https://drive.google.com/file/d/1ogVNCQ14aLjjGzKbAtypf-oHB8ixZt5T/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link demo">
+                            🎥 View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation System -->
+            <div class="project-card" data-categories="robotics,navigation">
+                <div class="project-image">
+                    <iframe src="https://drive.google.com/file/d/1QR3iC2NpSpbpOpCBQi58TTJB6SsqTx5r/preview" allow="autoplay"></iframe>
+                </div>
+                <div class="project-content">
+                    <div class="project-status status-completed">✅ Completed</div>
+                    <h3 class="project-title">🧭 Intelligent Navigation System</h3>
+                    <p class="project-desc">
+                        Complete autonomous navigation pipeline featuring SLAM mapping, dynamic obstacle avoidance, and path planning. Built with Nav2 stack, SLAM Toolbox, and advanced algorithms for real-time LiDAR processing and localization in complex environments. Demonstrates robust navigation capabilities in dynamic scenarios.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ROS 2</span>
+                        <span class="tech-tag">Nav2 Stack</span>
+                        <span class="tech-tag">SLAM Toolbox</span>
+                        <span class="tech-tag">LiDAR</span>
+                        <span class="tech-tag">Path Planning</span>
+                        <span class="tech-tag">Obstacle Avoidance</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/darshmenon/rosnav" target="_blank" rel="noopener noreferrer" class="project-link">
+                            🔗 GitHub Repository
+                        </a>
+                        <a href="https://drive.google.com/file/d/1QR3iC2NpSpbpOpCBQi58TTJB6SsqTx5r/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link demo">
+                            🎥 View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RL Mobile Pick-and-Place -->
+            <div class="project-card" data-categories="robotics,rl,manipulation">
+                <div class="project-image">
+                    <img src="https://drive.google.com/uc?export=view&id=1-M3P1KDmzTpxmwBpWRc6zmzpKn5FuIEy" alt="RL Mobile Pick and Place System" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <div class="project-status status-progress">🚧 In Progress</div>
+                    <h3 class="project-title">🤖 RL Mobile Pick-and-Place System</h3>
+                    <p class="project-desc">
+                        Autonomous mobile manipulator combining differential drive base with 4-6 DOF robotic arm, trained using reinforcement learning for pick-and-place operations. Integrates RGB-D perception, AprilTag localization, and continuous action space control with ROS 2 Jazzy architecture for advanced mobile manipulation tasks.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ROS 2 Jazzy</span>
+                        <span class="tech-tag">Reinforcement Learning</span>
+                        <span class="tech-tag">Mobile Manipulation</span>
+                        <span class="tech-tag">RGB-D Vision</span>
+                        <span class="tech-tag">AprilTag</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Gazebo</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/darshmenon/pickplace-rl-mobile" target="_blank" rel="noopener noreferrer" class="project-link">
+                            🔗 GitHub Repository
+                        </a>
+                        <div class="project-link coming-soon">
+                            🎥 Demo Coming Soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Vision Project Placeholder -->
+            <div class="project-card" data-categories="vision,robotics">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        🤖 Computer Vision<br>
+                        <small style="font-size: 1rem; opacity: 0.8;">Project in Development</small>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-status status-progress">🚧 In Progress</div>
+                    <h3 class="project-title">🔍 Advanced Vision System</h3>
+                    <p class="project-desc">
+                        Cutting-edge computer vision system for robotic perception and object recognition. This project focuses on developing robust visual processing capabilities for autonomous robots, including real-time object detection, tracking, and scene understanding using deep learning techniques.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">ROS 2</span>
+                        <span class="tech-tag">YOLO</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <div class="project-link coming-soon">
+                            🔗 Repository Coming Soon
+                        </div>
+                        <div class="project-link coming-soon">
+                            🎥 Demo Coming Soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Learning Project Placeholder -->
+            <div class="project-card" data-categories="rl,robotics">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        🧠 AI Learning<br>
+                        <small style="font-size: 1rem; opacity: 0.8;">Project in Development</small>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-status status-progress">🚧 In Progress</div>
+                    <h3 class="project-title">🧠 Multi-Agent RL System</h3>
+                    <p class="project-desc">
+                        Advanced multi-agent reinforcement learning framework for collaborative robotics tasks. This project explores how multiple robotic agents can learn to cooperate and coordinate their actions to achieve complex shared objectives in dynamic environments.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Multi-Agent RL</span>
+                        <span class="tech-tag">Cooperative Learning</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">ROS 2</span>
+                        <span class="tech-tag">Gazebo</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MADDPG</span>
+                    </div>
+                    <div class="project-links">
+                        <div class="project-link coming-soon">
+                            🔗 Repository Coming Soon
+                        </div>
+                        <div class="project-link coming-soon">
+                            🎥 Demo Coming Soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        const categories = card.getAttribute('data-categories');
+                        if (categories && categories.includes(filter)) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Animate cards on load
+        window.addEventListener('load', () => {
+            projectCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 100 * index);
+            });
+        });
+
+        // Add hover effects for tech tags
+        const techTags = document.querySelectorAll('.tech-tag');
+        techTags.forEach(tag => {
+            tag.addEventListener('mouseenter', () => {
+                tag.style.transform = 'translateY(-2px) scale(1.05)';
+                tag.style.boxShadow = '0 5px 15px rgba(100, 255, 218, 0.3)';
+            });
+            
+            tag.addEventListener('mouseleave', () => {
+                tag.style.transform = 'translateY(0) scale(1)';
+                tag.style.boxShadow = 'none';
+            });
+        });
+
+        // Enhanced project card interactions
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px)';
+                card.querySelector('.project-image img, .project-image iframe')?.style.setProperty('transform', 'scale(1.08)');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.querySelector('.project-image img, .project-image iframe')?.style.setProperty('transform', 'scale(1.05)');
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading states for demo links
+        const demoLinks = document.querySelectorAll('.project-link.demo');
+        demoLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const originalText = link.textContent;
+                link.textContent = '🔄 Loading Demo...';
+                link.style.opacity = '0.7';
+                
+                // Reset after a short delay (for UX feedback)
+                setTimeout(() => {
+                    link.textContent = originalText;
+                    link.style.opacity = '1';
+                }, 2000);
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all project cards
+        projectCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        // Add dynamic gradient effect to featured project
+        const featuredProject = document.querySelector('.featured-project');
+        if (featuredProject) {
+            featuredProject.addEventListener('mousemove', (e) => {
+                const rect = featuredProject.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                featuredProject.style.background = `
+                    radial-gradient(circle at ${x}px ${y}px, rgba(100, 255, 218, 0.08) 0%, rgba(255, 255, 255, 0.04) 50%),
+                    rgba(255, 255, 255, 0.04)
+                `;
+            });
+            
+            featuredProject.addEventListener('mouseleave', () => {
+                featuredProject.style.background = 'rgba(255, 255, 255, 0.04)';
+            });
+        }
+    </script>
+</body>
+</html>
