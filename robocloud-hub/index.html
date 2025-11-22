@@ -298,12 +298,28 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             background: linear-gradient(135deg, #64ffda, #00ffff, #03a9f4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
             text-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .hero p {
@@ -324,7 +340,7 @@
         }
 
         .section h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #64ffda;
             margin-bottom: 2rem;
             border-bottom: 1px solid rgba(100, 255, 218, 0.2);
@@ -455,7 +471,7 @@
         /* ==================== MOBILE RESPONSIVE ==================== */
         @media (max-width: 768px) {
             html {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             body,
@@ -553,7 +569,7 @@
 
         @media (max-width: 480px) {
             html {
-                font-size: 13px;
+                font-size: 12px;
             }
 
             .hero h1 {
@@ -906,7 +922,9 @@
             <p>The Future of Robotics Collaboration. A unified platform for jobs, news, and marketplace.</p>
             <div>
                 <a href="https://robocloud-dashboard.vercel.app/" target="_blank" class="btn">Visit Live Site</a>
-
+            </div>
+            <div class="hero-image">
+                <img src="../assets/robocloud_hub.png" alt="RoboCloud Hub Interface" loading="lazy">
             </div>
         </section>
 
