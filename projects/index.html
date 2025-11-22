@@ -28,41 +28,19 @@
             background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
             min-height: 100vh;
             scroll-behavior: smooth;
+            position: relative;
+            overflow-x: hidden;
         }
 
-       /* Enhanced particles effect with random positioning */
-        body::after {
-            content: '';
+        /* Canvas for particle background */
+        #particles-canvas {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: 
-                radial-gradient(2px 2px at 17% 23%, #64ffda, transparent),
-                radial-gradient(1px 1px at 83% 12%, rgba(100, 255, 218, 0.4), transparent),
-                radial-gradient(2px 2px at 45% 67%, #00bcd4, transparent),
-                radial-gradient(1px 1px at 92% 41%, rgba(0, 188, 212, 0.3), transparent),
-                radial-gradient(2px 2px at 28% 89%, #64ffda, transparent),
-                radial-gradient(1px 1px at 61% 34%, rgba(100, 255, 218, 0.5), transparent),
-                radial-gradient(2px 2px at 8% 56%, #00bcd4, transparent),
-                radial-gradient(1px 1px at 73% 78%, rgba(0, 188, 212, 0.3), transparent),
-                radial-gradient(2px 2px at 38% 15%, #64ffda, transparent),
-                radial-gradient(1px 1px at 54% 91%, rgba(100, 255, 218, 0.4), transparent),
-                radial-gradient(2px 2px at 11% 43%, #00bcd4, transparent),
-                radial-gradient(1px 1px at 88% 62%, rgba(0, 188, 212, 0.3), transparent),
-                radial-gradient(2px 2px at 67% 28%, #64ffda, transparent),
-                radial-gradient(1px 1px at 23% 71%, rgba(100, 255, 218, 0.5), transparent),
-                radial-gradient(2px 2px at 95% 85%, #00bcd4, transparent);
-            background-repeat: repeat;
-            background-size: 100% 100%;
-            animation: sparkle 25s linear infinite;
-            opacity: 0.5;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
-        }
-
-        @keyframes sparkle {
-            from { transform: translateY(0px); opacity: 0.5; }
-            50% { opacity: 0.7; }
-            to { transform: translateY(-50px); opacity: 0.5; }
+            opacity: 0.6;
         }
 
         /* ENHANCED RESPONSIVE NAVBAR */
@@ -514,6 +492,9 @@
     </style>
 </head>
 <body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+
     <!-- Enhanced Navigation matching About page -->
     <nav class="navbar">
         <ul class="nav-links">
@@ -521,12 +502,11 @@
             <li><a href="/my-portfolio-website/about/">About</a></li>
             <li><a href="/my-portfolio-website/blog/">Blog</a></li>
             <li><a href="/my-portfolio-website/contact/">Contact</a></li>
-                        <li><a href="/my-portfolio-website/projects/" class="active">Projects</a></li>
-
+            <li><a href="/my-portfolio-website/projects/" class="active">Projects</a></li>
         </ul>
     </nav>
 
-<div class="container">
+    <div class="container">
         <!-- Enhanced Header -->
         <div class="page-header">
             <h1>Featured Projects</h1>
@@ -617,7 +597,7 @@
                 </div>
                 <div class="project-content">
                     <div class="project-status status-completed">✅ Completed</div>
-                    <h3 class="project-title">🤖 HandBot ROS2 Ecosystem</h3>
+                    <h3 class="project-title"> HandBot ROS2 Ecosystem</h3>
                     <p class="project-desc">
                         A comprehensive ROS2-based manipulation framework featuring advanced gripper control, perception pipeline integration, and task orchestration capabilities. The system is designed for complex multi-step robotics operations with a modular architecture that ensures easy extensibility and scalability for various robotic applications.
                     </p>
@@ -672,14 +652,14 @@
                 </div>
             </div>
 
-            <!-- RL Mobile Pick-and-Place - FIXED IMAGE -->
+            <!-- RL Mobile Pick-and-Place -->
             <div class="project-card" data-categories="robotics,rl,manipulation">
                 <div class="project-image">
                     <img src="https://drive.google.com/uc?export=view&id=1-M3P1KDmzTpxmwBpWRc6zmzpKn5FuIEy" alt="RL Mobile Pick and Place System" loading="lazy">
                 </div>
                 <div class="project-content">
                     <div class="project-status status-progress">🚧 In Progress</div>
-                    <h3 class="project-title">🤖 RL Mobile Pick-and-Place System</h3>
+                    <h3 class="project-title"> RL Mobile Pick-and-Place System</h3>
                     <p class="project-desc">
                         Autonomous mobile manipulator combining differential drive base with 4-6 DOF robotic arm, trained using reinforcement learning for pick-and-place operations. Integrates RGB-D perception, AprilTag localization, and continuous action space control with ROS 2 Jazzy architecture for advanced mobile manipulation tasks.
                     </p>
@@ -774,17 +754,100 @@
         </div>
     </div>
 
-
     <script>
-        // Filter functionality
+        // ========== PARTICLE BACKGROUND SYSTEM ==========
+        class ParticleBackground {
+            constructor() {
+                this.canvas = document.getElementById('particles-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.particleCount = 150; // 150 particles for high density
+                
+                this.resize();
+                this.createParticles();
+                this.animate();
+                
+                window.addEventListener('resize', () => this.resize());
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = document.body.scrollHeight;
+            }
+            
+            createParticles() {
+                this.particles = [];
+                for (let i = 0; i < this.particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        size: Math.random() * 2 + 0.5, // Random size between 0.5 and 2.5
+                        speedY: Math.random() * 0.5 + 0.1, // Slow vertical drift
+                        opacity: Math.random() * 0.5 + 0.3, // Random opacity
+                        color: Math.random() > 0.5 ? '#64ffda' : '#00bcd4', // Alternate colors
+                        twinkleSpeed: Math.random() * 0.02 + 0.005 // Random twinkle rate
+                    });
+                }
+            }
+            
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Update canvas height to match document
+                if (this.canvas.height !== document.body.scrollHeight) {
+                    this.canvas.height = document.body.scrollHeight;
+                }
+                
+                this.particles.forEach(particle => {
+                    // Twinkle effect
+                    particle.opacity += particle.twinkleSpeed;
+                    if (particle.opacity > 0.8 || particle.opacity < 0.2) {
+                        particle.twinkleSpeed *= -1;
+                    }
+                    
+                    // Move particle
+                    particle.y -= particle.speedY;
+                    
+                    // Reset if goes off screen
+                    if (particle.y < -10) {
+                        particle.y = this.canvas.height + 10;
+                        particle.x = Math.random() * this.canvas.width;
+                    }
+                    
+                    // Draw particle
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = particle.color;
+                    this.ctx.globalAlpha = particle.opacity;
+                    this.ctx.fill();
+                    
+                    // Add glow effect
+                    const gradient = this.ctx.createRadialGradient(
+                        particle.x, particle.y, 0,
+                        particle.x, particle.y, particle.size * 3
+                    );
+                    gradient.addColorStop(0, particle.color);
+                    gradient.addColorStop(1, 'transparent');
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.globalAlpha = particle.opacity * 0.3;
+                    this.ctx.fill();
+                });
+                
+                this.ctx.globalAlpha = 1;
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        // Initialize particle background
+        new ParticleBackground();
+        
+        // ========== FILTER FUNCTIONALITY ==========
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
                 btn.classList.add('active');
 
                 const filter = btn.getAttribute('data-filter');
@@ -816,7 +879,7 @@
             });
         });
 
-        // Animate cards on load
+        // ========== ANIMATE CARDS ON LOAD ==========
         window.addEventListener('load', () => {
             projectCards.forEach((card, index) => {
                 setTimeout(() => {
@@ -825,7 +888,7 @@
             });
         });
 
-        // Add hover effects for tech tags
+        // ========== TECH TAG HOVER EFFECTS ==========
         const techTags = document.querySelectorAll('.tech-tag');
         techTags.forEach(tag => {
             tag.addEventListener('mouseenter', () => {
@@ -839,20 +902,22 @@
             });
         });
 
-        // Enhanced project card interactions
+        // ========== PROJECT CARD INTERACTIONS ==========
         projectCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-15px)';
-                card.querySelector('.project-image img, .project-image iframe')?.style.setProperty('transform', 'scale(1.08)');
+                const media = card.querySelector('.project-image img, .project-image iframe');
+                if (media) media.style.transform = 'scale(1.08)';
             });
             
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(-10px)';
-                card.querySelector('.project-image img, .project-image iframe')?.style.setProperty('transform', 'scale(1.05)');
+                const media = card.querySelector('.project-image img, .project-image iframe');
+                if (media) media.style.transform = 'scale(1.05)';
             });
         });
 
-        // Smooth scroll for internal links
+        // ========== SMOOTH SCROLL ==========
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -866,7 +931,7 @@
             });
         });
 
-        // Add loading states for demo links
+        // ========== DEMO LINK LOADING STATES ==========
         const demoLinks = document.querySelectorAll('.project-link.demo');
         demoLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -874,7 +939,6 @@
                 link.textContent = '🔄 Loading Demo...';
                 link.style.opacity = '0.7';
                 
-                // Reset after a short delay (for UX feedback)
                 setTimeout(() => {
                     link.textContent = originalText;
                     link.style.opacity = '1';
@@ -882,7 +946,7 @@
             });
         });
 
-        // Intersection Observer for fade-in animations
+        // ========== INTERSECTION OBSERVER FOR FADE-IN ==========
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -897,14 +961,13 @@
             });
         }, observerOptions);
 
-        // Observe all project cards
         projectCards.forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             observer.observe(card);
         });
 
-        // Add dynamic gradient effect to featured project
+        // ========== FEATURED PROJECT DYNAMIC GRADIENT ==========
         const featuredProject = document.querySelector('.featured-project');
         if (featuredProject) {
             featuredProject.addEventListener('mousemove', (e) => {
@@ -923,23 +986,17 @@
             });
         }
 
-        // Add error handling for images that fail to load
+        // ========== IMAGE ERROR HANDLING ==========
         const images = document.querySelectorAll('.project-image img');
         images.forEach(img => {
             img.addEventListener('error', function() {
-                console.log('Image failed to load:', this.src);
-                // Create a fallback placeholder
                 const placeholder = document.createElement('div');
                 placeholder.className = 'image-placeholder';
                 placeholder.innerHTML = `
-                    🤖 Project Image<br>
+                     Project Image<br>
                     <small style="font-size: 1rem; opacity: 0.8;">Loading...</small>
                 `;
                 this.parentElement.replaceChild(placeholder, this);
-            });
-            
-            img.addEventListener('load', function() {
-                console.log('Image loaded successfully:', this.src);
             });
         });
     </script>
