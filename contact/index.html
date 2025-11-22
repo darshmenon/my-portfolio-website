@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Darsh Menon | Robotics Engineer</title>
-    <meta name="description" content="Get in touch with Darsh Menon for robotics collaborations, ROS2 consulting, or project discussions">
-    
+    <meta name="description"
+        content="Get in touch with Darsh Menon for robotics collaborations, ROS2 consulting, or project discussions">
+
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html {
             font-size: 16px;
             -webkit-text-size-adjust: 100%;
             scroll-behavior: smooth;
         }
-        
+
         /* ENHANCED BODY WITH FONT FIXES */
-        body, body * {
+        body,
+        body * {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
         }
-        
+
         body {
             line-height: 1.6;
             color: #fff;
@@ -47,7 +56,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -57,8 +66,15 @@
         }
 
         @keyframes gridPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
         }
 
         body::after {
@@ -68,13 +84,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(ellipse at top left, rgba(100, 255, 218, 0.15) 0%, transparent 50%),
                 radial-gradient(ellipse at top right, rgba(0, 188, 212, 0.15) 0%, transparent 50%);
             z-index: -999;
             pointer-events: none;
         }
-        
+
         .particles {
             position: fixed;
             top: 0;
@@ -85,7 +101,7 @@
             z-index: -2;
             pointer-events: none;
         }
-        
+
         .particle {
             position: absolute;
             background: #64ffda;
@@ -94,12 +110,25 @@
             animation: float 20s infinite linear;
             box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(100vh) translateX(-50px) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.4; }
-            90% { opacity: 0.15; }
-            100% { transform: translateY(-100px) translateX(50px) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(100vh) translateX(-50px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.4;
+            }
+
+            90% {
+                opacity: 0.15;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* TERMINAL-STYLE NAVBAR */
@@ -115,7 +144,7 @@
             padding: 1rem 3rem 1rem 2.5rem;
             z-index: 1000;
             border: 2px solid #64ffda;
-            box-shadow: 
+            box-shadow:
                 0 0 30px rgba(100, 255, 218, 0.4),
                 inset 0 0 20px rgba(100, 255, 218, 0.1),
                 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -137,14 +166,22 @@
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
 
         .navbar:hover {
             background: rgba(0, 0, 0, 0.95);
             border-color: #00ffff;
-            box-shadow: 
+            box-shadow:
                 0 0 40px rgba(100, 255, 218, 0.6),
                 inset 0 0 30px rgba(100, 255, 218, 0.15),
                 0 15px 50px rgba(0, 0, 0, 0.6);
@@ -228,8 +265,15 @@
         }
 
         @keyframes textShine {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .page-header p {
@@ -246,7 +290,8 @@
             margin-bottom: 4rem;
         }
 
-        .contact-info, .contact-form {
+        .contact-info,
+        .contact-form {
             background: rgba(0, 0, 0, 0.6);
             border: 2px solid rgba(100, 255, 218, 0.2);
             border-radius: 30px;
@@ -255,14 +300,15 @@
             -webkit-backdrop-filter: blur(30px);
             position: relative;
             animation: fadeInLeft 1s ease-out;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .contact-form {
             animation: fadeInRight 1s ease-out;
         }
 
-        .contact-info::before, .contact-form::before {
+        .contact-info::before,
+        .contact-form::before {
             content: '';
             position: absolute;
             top: 0;
@@ -429,7 +475,7 @@
             backdrop-filter: blur(30px);
             position: relative;
             animation: fadeInUp 1s ease-out 0.5s both;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .chess-section::before {
@@ -482,23 +528,51 @@
         }
 
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -541,7 +615,8 @@
                 gap: 2rem;
             }
 
-            .contact-info, .contact-form {
+            .contact-info,
+            .contact-form {
                 padding: 2rem;
             }
 
@@ -565,6 +640,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="particles"></div>
 
@@ -575,19 +651,21 @@
             <li><a href="/my-portfolio-website/blog/">Blog</a></li>
             <li><a href="/my-portfolio-website/contact/" class="active">Contact</a></li>
             <li><a href="/my-portfolio-website/projects/">Projects</a></li>
+            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud Hub</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="page-header">
             <h1>Let's Connect</h1>
-            <p>Ready to collaborate on groundbreaking robotics projects? Have a question about ROS 2 or autonomous systems? Let's start a conversation!</p>
+            <p>Ready to collaborate on groundbreaking robotics projects? Have a question about ROS 2 or autonomous
+                systems? Let's start a conversation!</p>
         </div>
 
         <div class="contact-grid">
             <div class="contact-info">
                 <h2 class="section-title">Get In Touch</h2>
-                
+
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <div class="contact-details">
@@ -600,7 +678,8 @@
                     <div class="contact-icon">💼</div>
                     <div class="contact-details">
                         <h3>LinkedIn</h3>
-                        <p><a href="https://www.linkedin.com/in/darsh-menon/" target="_blank">linkedin.com/in/darsh-menon</a></p>
+                        <p><a href="https://www.linkedin.com/in/darsh-menon/"
+                                target="_blank">linkedin.com/in/darsh-menon</a></p>
                     </div>
                 </div>
 
@@ -628,22 +707,24 @@
                         <label for="name">Your Name</label>
                         <input type="text" class="form-control" id="name" placeholder="John Doe" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" class="form-control" id="email" placeholder="john@example.com" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" class="form-control" id="subject" placeholder="Robotics Collaboration Opportunity">
+                        <input type="text" class="form-control" id="subject"
+                            placeholder="Robotics Collaboration Opportunity">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea class="form-control" id="message" placeholder="Tell me about your robotics project or question..." required></textarea>
+                        <textarea class="form-control" id="message"
+                            placeholder="Tell me about your robotics project or question..." required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn-primary">Send Message 🚀</button>
                 </form>
             </div>
@@ -654,7 +735,8 @@
             <div class="chess-icon">♛</div>
             <h3 class="chess-title">Chess Enthusiast</h3>
             <p class="chess-desc">
-                When I'm not programming robots, you'll find me strategizing on the chessboard. The analytical thinking and pattern recognition skills from chess translate beautifully into robotics algorithms!
+                When I'm not programming robots, you'll find me strategizing on the chessboard. The analytical thinking
+                and pattern recognition skills from chess translate beautifully into robotics algorithms!
             </p>
             <a href="https://www.chess.com/member/darshthegreat" target="_blank" class="chess-link">
                 Challenge me on Chess.com ♟️
@@ -663,10 +745,12 @@
 
         <!-- Social Links -->
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/darsh-menon/" target="_blank" class="social-link" title="LinkedIn">💼</a>
+            <a href="https://www.linkedin.com/in/darsh-menon/" target="_blank" class="social-link"
+                title="LinkedIn">💼</a>
             <a href="https://github.com/darshmenon" target="_blank" class="social-link" title="GitHub">💻</a>
             <a href="https://medium.com/@darshmenon02" target="_blank" class="social-link" title="Medium Blog">📝</a>
-            <a href="https://www.chess.com/member/darshthegreat" target="_blank" class="social-link" title="Chess.com">♛</a>
+            <a href="https://www.chess.com/member/darshthegreat" target="_blank" class="social-link"
+                title="Chess.com">♛</a>
         </div>
     </div>
 
@@ -674,7 +758,7 @@
         function createParticles() {
             const particles = document.querySelector('.particles');
             const colors = ['#64ffda', '#00bcd4', '#03a9f4', '#2196f3'];
-            
+
             for (let i = 0; i < 30; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
@@ -687,13 +771,13 @@
             }
         }
 
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
+
             const mailtoLink = `mailto:darshmenon02@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Website')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
             window.location.href = mailtoLink;
             alert('Opening your email client... Please send the message to complete contact.');
@@ -704,7 +788,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -723,4 +807,5 @@
         window.addEventListener('load', createParticles);
     </script>
 </body>
+
 </html>

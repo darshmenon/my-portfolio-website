@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Darsh Menon | Robotics Engineering Insights</title>
-    <meta name="description" content="Technical articles and insights on ROS2, autonomous systems, and robotics by Darsh Menon">
+    <meta name="description"
+        content="Technical articles and insights on ROS2, autonomous systems, and robotics by Darsh Menon">
     <meta name="keywords" content="Darsh Menon, Robotics Blog, ROS2 Tutorials, Navigation, Pick and Place">
-    
+
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html {
             font-size: 16px;
             -webkit-text-size-adjust: 100%;
             scroll-behavior: smooth;
         }
-        
+
         /* ENHANCED BODY WITH FONT FIXES */
-        body, body * {
+        body,
+        body * {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
         }
-        
+
         body {
             line-height: 1.6;
             color: #fff;
@@ -48,7 +57,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -58,8 +67,15 @@
         }
 
         @keyframes gridPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
         }
 
         body::after {
@@ -69,13 +85,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(ellipse at top left, rgba(100, 255, 218, 0.15) 0%, transparent 50%),
                 radial-gradient(ellipse at top right, rgba(0, 188, 212, 0.15) 0%, transparent 50%);
             z-index: -999;
             pointer-events: none;
         }
-        
+
         .particles {
             position: fixed;
             top: 0;
@@ -86,7 +102,7 @@
             z-index: -2;
             pointer-events: none;
         }
-        
+
         .particle {
             position: absolute;
             background: #64ffda;
@@ -95,12 +111,25 @@
             animation: float 20s infinite linear;
             box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(100vh) translateX(-50px) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.4; }
-            90% { opacity: 0.15; }
-            100% { transform: translateY(-100px) translateX(50px) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(100vh) translateX(-50px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.4;
+            }
+
+            90% {
+                opacity: 0.15;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* TERMINAL-STYLE NAVBAR */
@@ -116,7 +145,7 @@
             padding: 1rem 3rem 1rem 2.5rem;
             z-index: 1000;
             border: 2px solid #64ffda;
-            box-shadow: 
+            box-shadow:
                 0 0 30px rgba(100, 255, 218, 0.4),
                 inset 0 0 20px rgba(100, 255, 218, 0.1),
                 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -138,14 +167,22 @@
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
 
         .navbar:hover {
             background: rgba(0, 0, 0, 0.95);
             border-color: #00ffff;
-            box-shadow: 
+            box-shadow:
                 0 0 40px rgba(100, 255, 218, 0.6),
                 inset 0 0 30px rgba(100, 255, 218, 0.15),
                 0 15px 50px rgba(0, 0, 0, 0.6);
@@ -228,8 +265,15 @@
         }
 
         @keyframes textShine {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .page-header p {
@@ -256,7 +300,7 @@
             transition: all 0.4s ease;
             position: relative;
             animation: fadeInUp 1s ease-out;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .blog-card::before {
@@ -410,7 +454,7 @@
             backdrop-filter: blur(30px);
             position: relative;
             animation: fadeInUp 1s ease-out 0.5s both;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .stats-section::before {
@@ -463,13 +507,27 @@
         }
 
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -526,6 +584,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="particles"></div>
 
@@ -536,13 +595,15 @@
             <li><a href="/my-portfolio-website/blog/" class="active">Blog</a></li>
             <li><a href="/my-portfolio-website/contact/">Contact</a></li>
             <li><a href="/my-portfolio-website/projects/">Projects</a></li>
+            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud Hub</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="page-header">
             <h1>Engineering Insights</h1>
-            <p>Sharing practical knowledge, tutorials, and insights from the frontlines of robotics development. From ROS 2 navigation to autonomous systems - learn how to build the future.</p>
+            <p>Sharing practical knowledge, tutorials, and insights from the frontlines of robotics development. From
+                ROS 2 navigation to autonomous systems - learn how to build the future.</p>
         </div>
 
         <!-- Blog Stats -->
@@ -574,8 +635,9 @@
                 <div class="blog-image ros-navigation">🗺️</div>
                 <div class="blog-content">
                     <span class="blog-category">ROS 2 Tutorial</span>
-                    <h2 class="blog-title">Mastering ROS 2 Navigation: From SLAM Mapping to Autonomous Obstacle Avoidance</h2>
-                    
+                    <h2 class="blog-title">Mastering ROS 2 Navigation: From SLAM Mapping to Autonomous Obstacle
+                        Avoidance</h2>
+
                     <div class="blog-meta">
                         <div class="blog-meta-item">
                             <span>📅</span>
@@ -588,7 +650,9 @@
                     </div>
 
                     <p class="blog-excerpt">
-                        A comprehensive deep-dive into building robust autonomous navigation systems using ROS 2 Jazzy. Learn how to implement SLAM mapping, configure costmaps, tune navigation parameters, and achieve real-time obstacle avoidance with practical code examples.
+                        A comprehensive deep-dive into building robust autonomous navigation systems using ROS 2 Jazzy.
+                        Learn how to implement SLAM mapping, configure costmaps, tune navigation parameters, and achieve
+                        real-time obstacle avoidance with practical code examples.
                     </p>
 
                     <div class="blog-tags">
@@ -600,7 +664,8 @@
                         <span class="blog-tag">LiDAR</span>
                     </div>
 
-                    <a href="https://medium.com/@darshmenon02/mastering-ros-2-navigation-from-slam-mapping-to-autonomous-obstacle-avoidance-7446e4ff049a" target="_blank" class="blog-link">
+                    <a href="https://medium.com/@darshmenon02/mastering-ros-2-navigation-from-slam-mapping-to-autonomous-obstacle-avoidance-7446e4ff049a"
+                        target="_blank" class="blog-link">
                         Read Full Article →
                     </a>
                 </div>
@@ -610,8 +675,9 @@
                 <div class="blog-image pick-place">🦾</div>
                 <div class="blog-content">
                     <span class="blog-category">Robotics Project</span>
-                    <h2 class="blog-title">How I'm Building an Autonomous Pick-and-Place System with ROS 2 Jazzy and Gazebo Harmonic</h2>
-                    
+                    <h2 class="blog-title">How I'm Building an Autonomous Pick-and-Place System with ROS 2 Jazzy and
+                        Gazebo Harmonic</h2>
+
                     <div class="blog-meta">
                         <div class="blog-meta-item">
                             <span>📅</span>
@@ -624,7 +690,9 @@
                     </div>
 
                     <p class="blog-excerpt">
-                        Step-by-step walkthrough of developing a complete autonomous robotic arm system using MoveIt 2 and advanced computer vision. From inverse kinematics planning to collision-aware task execution.
+                        Step-by-step walkthrough of developing a complete autonomous robotic arm system using MoveIt 2
+                        and advanced computer vision. From inverse kinematics planning to collision-aware task
+                        execution.
                     </p>
 
                     <div class="blog-tags">
@@ -636,7 +704,8 @@
                         <span class="blog-tag">OpenCV</span>
                     </div>
 
-                    <a href="https://medium.com/@darshmenon02/how-i-am-building-an-autonomous-pick-and-place-system-with-ros-2-jazzy-and-gazebo-harmonic-6474cbcc8dc7" target="_blank" class="blog-link">
+                    <a href="https://medium.com/@darshmenon02/how-i-am-building-an-autonomous-pick-and-place-system-with-ros-2-jazzy-and-gazebo-harmonic-6474cbcc8dc7"
+                        target="_blank" class="blog-link">
                         Read Full Article →
                     </a>
                 </div>
@@ -648,7 +717,7 @@
         function createParticles() {
             const particles = document.querySelector('.particles');
             const colors = ['#64ffda', '#00bcd4', '#03a9f4', '#2196f3'];
-            
+
             for (let i = 0; i < 30; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
@@ -666,7 +735,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -685,4 +754,5 @@
         window.addEventListener('load', createParticles);
     </script>
 </body>
+
 </html>
