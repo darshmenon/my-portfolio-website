@@ -7,6 +7,7 @@
     <meta name="description"
         content="Darsh Menon - Robotics Engineer | Featured robotics projects including RL bipedal walking, mobile manipulation, and navigation systems.">
     <title>Projects - Darsh Menon | Robotics Engineer</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
 
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,16 +177,26 @@
         }
 
         .navbar::before {
-            content: '>';
+            content: none;
+        }
+
+        .nav-logo {
             position: absolute;
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: #64ffda;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            font-size: 1.2rem;
-            animation: blink 1.5s infinite;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #64ffda;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+        }
+
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @keyframes blink {
@@ -609,10 +620,17 @@
                 left: 10px;
                 right: 10px;
                 transform: none;
-                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                padding: 0.8rem 1rem;
                 max-width: calc(100vw - 20px);
                 width: calc(100% - 20px);
-                border-radius: 25px;
+                border-radius: 20px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .navbar::-webkit-scrollbar {
+                display: none;
             }
 
             .navbar::before {
@@ -622,6 +640,9 @@
 
             .nav-links {
                 gap: 1rem;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-right: 1rem;
             }
 
             .nav-links a {
@@ -1326,6 +1347,9 @@
     <div class="particles"></div>
 
     <nav class="navbar">
+        <a href="/my-portfolio-website/" class="nav-logo">
+            <img src="../assets/favicon.png" alt="Logo">
+        </a>
         <ul class="nav-links">
             <li><a href="/my-portfolio-website/">Home</a></li>
             <li><a href="/my-portfolio-website/about/">About</a></li>
@@ -1393,8 +1417,7 @@
             <!-- RL Bipedal Walking Robot -->
             <div class="project-card" data-categories="robotics,rl">
                 <div class="project-image">
-                    <img src="https://drive.google.com/uc?export=view&id=1yYMF5bmQIk8Q1JZ3tBAgS_WaCOIw8mTp"
-                        alt="RL Bipedal Walking Robot" loading="lazy">
+                    <img src="../assets/project_rl_bipedal.png" alt="RL Bipedal Walking Robot" loading="lazy">
                 </div>
                 <div class="project-content">
                     <div class="project-status status-progress">🚧 In Progress</div>
@@ -1427,8 +1450,7 @@
             <!-- HandBot ROS2 System -->
             <div class="project-card" data-categories="robotics,manipulation">
                 <div class="project-image">
-                    <img src="https://drive.google.com/uc?export=view&id=1r63Sw9w8_P95lZKZqz__lGzyzPE3bFSt"
-                        alt="HandBot ROS2 System" loading="lazy">
+                    <img src="../assets/project_handbot.png" alt="HandBot ROS2 System" loading="lazy">
                 </div>
                 <div class="project-content">
                     <div class="project-status status-completed">✅ Completed</div>
@@ -1496,8 +1518,7 @@
             <!-- RL Mobile Pick-and-Place -->
             <div class="project-card" data-categories="robotics,rl,manipulation">
                 <div class="project-image">
-                    <img src="https://drive.google.com/uc?export=view&id=1-M3P1KDmzTpxmwBpWRc6zmzpKn5FuIEy"
-                        alt="RL Mobile Pick and Place System" loading="lazy">
+                    <img src="../assets/project_rl_mobile.png" alt="RL Mobile Pick and Place System" loading="lazy">
                 </div>
                 <div class="project-content">
                     <div class="project-status status-progress">🚧 In Progress</div>

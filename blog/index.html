@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Darsh Menon | Robotics Engineering Insights</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
     <meta name="description"
         content="Technical articles and insights on ROS2, autonomous systems, and robotics by Darsh Menon">
     <meta name="keywords" content="Darsh Menon, Robotics Blog, ROS2 Tutorials, Navigation, Pick and Place">
@@ -177,16 +178,26 @@
         }
 
         .navbar::before {
-            content: '>';
+            content: none;
+        }
+
+        .nav-logo {
             position: absolute;
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: #64ffda;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            font-size: 1.2rem;
-            animation: blink 1.5s infinite;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #64ffda;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+        }
+
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @keyframes blink {
@@ -364,11 +375,15 @@
         }
 
         .blog-image.ros-navigation {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32, #1B5E20);
+            background-image: url('../assets/blog_ros2_nav.png');
+            background-size: cover;
+            background-position: center;
         }
 
         .blog-image.pick-place {
-            background: linear-gradient(135deg, #FF9800, #F57C00, #E65100);
+            background-image: url('../assets/blog_pick_place.png');
+            background-size: cover;
+            background-position: center;
         }
 
         .blog-content {
@@ -589,10 +604,17 @@
                 left: 10px;
                 right: 10px;
                 transform: none;
-                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                padding: 0.8rem 1rem;
                 max-width: calc(100vw - 20px);
                 width: calc(100% - 20px);
-                border-radius: 25px;
+                border-radius: 20px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .navbar::-webkit-scrollbar {
+                display: none;
             }
 
             .navbar::before {
@@ -1233,6 +1255,9 @@
     <div class="particles"></div>
 
     <nav class="navbar">
+        <a href="/my-portfolio-website/" class="nav-logo">
+            <img src="../assets/favicon.png" alt="Logo">
+        </a>
         <ul class="nav-links">
             <li><a href="/my-portfolio-website/">Home</a></li>
             <li><a href="/my-portfolio-website/about/">About</a></li>
