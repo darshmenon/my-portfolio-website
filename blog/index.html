@@ -1203,10 +1203,17 @@
                 left: 10px;
                 right: 10px;
                 transform: none;
-                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                padding: 0.8rem 1rem;
                 max-width: calc(100vw - 20px);
                 width: calc(100% - 20px);
-                border-radius: 25px;
+                border-radius: 20px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .navbar::-webkit-scrollbar {
+                display: none;
             }
 
             .navbar::before {
@@ -1216,6 +1223,9 @@
 
             .nav-links {
                 gap: 1rem;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-right: 1rem;
             }
 
             .nav-links a {
