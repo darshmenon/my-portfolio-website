@@ -575,128 +575,7 @@
             }
         }
 
-        /* ==================== MOBILE RESPONSIVE ==================== */
-        @media (max-width: 768px) {
-            html {
-                font-size: 13px;
-            }
 
-            body,
-            body * {
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-            }
-
-            h1,
-            h2,
-            .skill-tag,
-            .project-title,
-            .stat-number {
-                font-family: 'Orbitron', sans-serif !important;
-            }
-
-            .nav-links a,
-            .project-link {
-                font-family: 'JetBrains Mono', monospace !important;
-            }
-
-            body {
-                background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
-                background-attachment: scroll;
-            }
-
-            .navbar {
-                position: fixed;
-                top: 10px;
-                left: 10px;
-                right: 10px;
-                transform: none;
-                padding: 0.8rem 1rem;
-                max-width: calc(100vw - 20px);
-                width: calc(100% - 20px);
-                border-radius: 20px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .navbar::-webkit-scrollbar {
-                display: none;
-            }
-
-            .navbar::before {
-                left: 15px;
-                font-size: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                padding-right: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 0.85rem;
-            }
-
-            .navbar:active,
-            .navbar:focus,
-            .navbar:focus-within {
-                transform: none !important;
-                left: 10px !important;
-                right: 10px !important;
-            }
-
-            .nav-links a:active {
-                transform: none !important;
-            }
-
-            .container {
-                padding: 90px 15px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .featured-project {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-project .project-image,
-            .featured-project .project-image iframe {
-                min-height: 250px;
-            }
-
-            .project-content {
-                padding: 2rem;
-            }
-
-            .project-title {
-                font-size: 1.4rem;
-            }
-
-            .page-header h1 {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
-            }
-
-            /* Disable complex hover effects on mobile */
-            .navbar:hover,
-            .nav-links a:hover,
-            .project-card:hover,
-            .filter-btn:hover,
-            .tech-tag:hover,
-            .project-link:hover {
-                transform: none;
-            }
-        }
 
         @media (max-width: 480px) {
             html {
@@ -1268,6 +1147,10 @@
         }
 
         @media (max-width: 768px) {
+            html {
+                font-size: 12px;
+            }
+
             .navbar {
                 position: fixed;
                 top: 10px;

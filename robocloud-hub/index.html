@@ -469,104 +469,7 @@
             }
         }
 
-        /* ==================== MOBILE RESPONSIVE ==================== */
-        @media (max-width: 768px) {
-            html {
-                font-size: 13px;
-            }
 
-            body,
-            body * {
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4 {
-                font-family: 'Orbitron', sans-serif !important;
-            }
-
-            .nav-links a,
-            .tech-tag,
-            .btn {
-                font-family: 'JetBrains Mono', monospace !important;
-            }
-
-            body {
-                background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
-                background-attachment: scroll;
-            }
-
-            .navbar {
-                position: fixed;
-                top: 10px;
-                left: 10px;
-                right: 10px;
-                transform: none;
-                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
-                max-width: calc(100vw - 20px);
-                width: calc(100% - 20px);
-                border-radius: 25px;
-            }
-
-            .navbar::before {
-                left: 15px;
-                font-size: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 0.85rem;
-            }
-
-            .navbar:active,
-            .navbar:focus,
-            .navbar:focus-within {
-                transform: none !important;
-                left: 10px !important;
-                right: 10px !important;
-            }
-
-            .nav-links a:active {
-                transform: none !important;
-            }
-
-            .container {
-                padding: 90px 15px 20px;
-            }
-
-            .hero {
-                padding: 2rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .navbar:hover {
-                transform: none;
-            }
-
-            .section {
-                padding: 1.5rem;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            /* Disable complex hover effects on mobile */
-            .nav-links a:hover,
-            .feature-card:hover,
-            .btn:hover {
-                transform: none;
-            }
-        }
 
         @media (max-width: 480px) {
             html {
@@ -886,6 +789,10 @@
         }
 
         @media (max-width: 768px) {
+            html {
+                font-size: 12px;
+            }
+
             .navbar {
                 top: 10px;
                 width: calc(100% - 20px);
