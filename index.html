@@ -2225,7 +2225,7 @@
         setTimeout(typeSubtitle, 3500); // Start after name finishes
 
         // Terminal-style blinking effect for sections
-        const observer = new IntersectionObserver((entries) => {
+        const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
@@ -2234,7 +2234,7 @@
         });
 
         document.querySelectorAll('.section').forEach((section) => {
-            observer.observe(section);
+            sectionObserver.observe(section);
         });
     </script>
 </body>
