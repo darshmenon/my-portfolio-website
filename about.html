@@ -64,6 +64,12 @@
             padding: 1rem 2.5rem;
             z-index: 1000;
             border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(100, 255, 218, 0.4);
         }
 
         .nav-links {
@@ -76,7 +82,7 @@
             color: white;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         .nav-links a:hover,
@@ -123,6 +129,7 @@
             backdrop-filter: blur(20px);
             animation: fadeInUp 1s ease-out;
             position: relative;
+            text-align: left;
         }
 
         .section::before {
