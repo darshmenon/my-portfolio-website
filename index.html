@@ -616,8 +616,29 @@
             }
         }
 
+        /* Typing cursor animation */
+        .typing-cursor {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 700;
+            animation: blink-cursor 1s step-end infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink-cursor {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
         .hero .subtitle {
-            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
             font-size: 1.8rem;
             color: #da70d6;
             margin-bottom: 1rem;
@@ -628,7 +649,7 @@
         }
 
         .hero .education {
-            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
             font-size: 1.4rem;
             color: #9370db;
             margin-bottom: 1.5rem;
@@ -1476,7 +1497,7 @@
                 <img src="assets/profilepic.jpg" alt="Darsh Menon - Robotics Software Developer from BITS Pilani"
                     onerror="this.style.display='none'; this.parentElement.innerHTML='👨‍💻';">
             </div>
-            <h1>Darsh Menon</h1>
+            <h1><span id="typed-name"></span><span class="typing-cursor">|</span></h1>
             <p class="subtitle">Robotics Software Developer at Asimov Robotics</p>
             <p class="education">Graduate from BITS Pilani (Mechanical Engineering, 2024)</p>
             <p class="education" style="margin-top: 0.5rem;">Building <a href="https://robocloud-dashboard.vercel.app/"
@@ -2166,6 +2187,24 @@
         "url": "https://darshmenon.github.io/my-portfolio-website/"
       }
     }
+    </script>
+
+    <script>
+        // Typing animation for name
+        const nameText = 'Darsh Menon';
+        const typedElement = document.getElementById('typed-name');
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < nameText.length) {
+                typedElement.textContent += nameText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 150);
+            }
+        }
+
+        // Start typing after a short delay
+        setTimeout(typeWriter, 500);
     </script>
 </body>
 
