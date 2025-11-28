@@ -214,7 +214,6 @@
                 0 0 40px rgba(147, 112, 219, 0.6),
                 inset 0 0 30px rgba(147, 112, 219, 0.15),
                 0 15px 50px rgba(0, 0, 0, 0.6);
-            transform: translateX(-50%) translateY(-3px);
         }
 
         .nav-status {
@@ -792,7 +791,6 @@
                 0 0 40px rgba(147, 112, 219, 0.6),
                 inset 0 0 30px rgba(147, 112, 219, 0.15),
                 0 15px 50px rgba(0, 0, 0, 0.6);
-            transform: translateX(-50%) translateY(-3px);
         }
 
         .nav-links {
@@ -1287,6 +1285,18 @@
         .footer p {
             margin: 0.5rem 0;
         }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 0 0 2rem;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -1307,7 +1317,8 @@
     <div class="container">
         <div class="page-header">
             <h1>Featured Projects</h1>
-            <p>Cutting-edge robotics and AI projects showcasing advanced manipulation, navigation, reinforcement
+            <p class="about-text">Cutting-edge robotics and AI projects showcasing advanced manipulation, navigation,
+                reinforcement
                 learning, and autonomous systems capabilities</p>
         </div>
 
@@ -1336,6 +1347,7 @@
                         kinematics, collision-aware motion planning, and precise manipulation capabilities for
                         industrial automation applications.
                     </p>
+
                     <div class="project-tech">
                         <span class="tech-tag">ROS 2</span>
                         <span class="tech-tag">MoveIt 2</span>

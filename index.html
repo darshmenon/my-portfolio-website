@@ -1295,10 +1295,11 @@
             line-height: 1.8;
             color: #ffffff;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 0 2rem;
             font-weight: 500;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             letter-spacing: 0.5px;
+            text-align: left;
         }
 
         /* HEXAGONAL SKILL TAGS */
@@ -2253,7 +2254,7 @@
             const particles = document.querySelector('.particles');
             const colors = ['#da70d6', '#9370db', '#9370db', '#2196f3'];
 
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 12; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
@@ -2266,7 +2267,7 @@
 
             // Create circuit nodes
             const body = document.body;
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 20; i++) {
                 const node = document.createElement('div');
                 node.className = 'circuit-node';
                 node.style.left = Math.random() * 100 + '%';
@@ -2276,7 +2277,7 @@
             }
 
             // Create white stars/bubbles
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 35; i++) {
                 const star = document.createElement('div');
                 star.className = 'white-star';
                 star.style.left = Math.random() * 100 + '%';

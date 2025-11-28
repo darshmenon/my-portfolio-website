@@ -66,10 +66,14 @@
         }
 
         @keyframes blink {
-            0%, 50% {
+
+            0%,
+            50% {
                 opacity: 1;
             }
-            51%, 100% {
+
+            51%,
+            100% {
                 opacity: 0;
             }
         }
@@ -103,10 +107,13 @@
         }
 
         @keyframes statusPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 box-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
             }
+
             50% {
                 opacity: 0.7;
                 box-shadow: 0 0 5px rgba(147, 112, 219, 0.2);
@@ -505,6 +512,18 @@
                 flex-wrap: wrap;
             }
         }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 0 0 2rem;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -523,7 +542,8 @@
     <div class="container">
         <div class="page-header">
             <h1>Let's Connect</h1>
-            <p>Ready to collaborate on groundbreaking robotics projects? Have a question about ROS 2 or autonomous
+            <p class="about-text">Ready to collaborate on groundbreaking robotics projects? Have a question about ROS 2
+                or autonomous
                 systems? Let's start a conversation!</p>
         </div>
 
