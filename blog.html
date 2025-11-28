@@ -66,10 +66,14 @@
         }
 
         @keyframes blink {
-            0%, 50% {
+
+            0%,
+            50% {
                 opacity: 1;
             }
-            51%, 100% {
+
+            51%,
+            100% {
                 opacity: 0;
             }
         }
@@ -103,10 +107,13 @@
         }
 
         @keyframes statusPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 box-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
             }
+
             50% {
                 opacity: 0.7;
                 box-shadow: 0 0 5px rgba(147, 112, 219, 0.2);
@@ -480,6 +487,41 @@
         }
 
         @media (max-width: 768px) {
+            .navbar {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                transform: none;
+                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                max-width: calc(100vw - 20px);
+                width: calc(100% - 20px);
+                border-radius: 25px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .navbar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .navbar::before {
+                left: 15px;
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-right: 0.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
             .container {
                 padding: 100px 15px 20px;
             }
@@ -517,6 +559,18 @@
                 justify-content: center;
             }
         }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 0 0 2rem;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -535,7 +589,8 @@
     <div class="container">
         <div class="page-header">
             <h1>Engineering Insights</h1>
-            <p>Sharing practical knowledge, tutorials, and insights from the frontlines of robotics development. From
+            <p class="about-text">Sharing practical knowledge, tutorials, and insights from the frontlines of robotics
+                development. From
                 ROS 2 navigation to autonomous systems - learn how to build the future.</p>
         </div>
 
