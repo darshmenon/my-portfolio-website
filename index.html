@@ -1741,22 +1741,12 @@
             .navbar {
                 position: fixed;
                 top: 10px;
-                left: 10px;
-                right: 10px;
-                transform: none;
-                padding: 0.8rem 1rem;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
                 max-width: calc(100vw - 20px);
-                width: calc(100% - 20px);
-                border-radius: 20px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                /* Firefox */
-            }
-
-            .navbar::-webkit-scrollbar {
-                display: none;
-                /* Chrome, Safari, Opera */
+                width: auto;
+                border-radius: 25px;
             }
 
             .navbar::before {
@@ -1765,26 +1755,13 @@
             }
 
             .nav-links {
-                gap: 0.5rem;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                padding-right: 0.5rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .nav-links a {
                 font-size: 0.85rem;
-            }
-
-            .navbar:active,
-            .navbar:focus,
-            .navbar:focus-within {
-                transform: none !important;
-                left: 10px !important;
-                right: 10px !important;
-            }
-
-            .nav-links a:active {
-                transform: none !important;
             }
 
             .container {

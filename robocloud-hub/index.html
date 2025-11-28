@@ -902,24 +902,20 @@
             }
 
             .navbar {
+                position: fixed;
                 top: 10px;
-                width: calc(100% - 20px);
-                padding: 0.8rem 1rem;
-                border-radius: 20px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .navbar::-webkit-scrollbar {
-                display: none;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                max-width: calc(100vw - 20px);
+                width: auto;
+                border-radius: 25px;
             }
 
             .nav-links {
-                gap: 0.5rem;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                padding-right: 0.5rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .nav-links a {
