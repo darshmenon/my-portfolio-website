@@ -83,8 +83,8 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(147, 112, 219, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(147, 112, 219, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: -1;
             pointer-events: none;
@@ -112,8 +112,8 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse at top left, rgba(100, 255, 218, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at top right, rgba(0, 188, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at top left, rgba(147, 112, 219, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at top right, rgba(186, 85, 211, 0.15) 0%, transparent 50%),
                 radial-gradient(ellipse at center, rgba(255, 107, 107, 0.08) 0%, transparent 70%);
             z-index: -999;
             pointer-events: none;
@@ -137,7 +137,7 @@
             border-radius: 50%;
             opacity: 0.15;
             animation: float 20s infinite linear;
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+            box-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
         }
 
         @keyframes float {
@@ -174,8 +174,8 @@
             z-index: 1000;
             border: 2px solid #9370db;
             box-shadow:
-                0 0 30px rgba(100, 255, 218, 0.4),
-                inset 0 0 20px rgba(100, 255, 218, 0.1),
+                0 0 30px rgba(147, 112, 219, 0.4),
+                inset 0 0 20px rgba(147, 112, 219, 0.1),
                 0 10px 40px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
             max-width: calc(100vw - 40px);
@@ -209,10 +209,10 @@
 
         .navbar:hover {
             background: rgba(0, 0, 0, 0.95);
-            border-color: #00ffff;
+            border-color: #ba55d3;
             box-shadow:
-                0 0 40px rgba(100, 255, 218, 0.6),
-                inset 0 0 30px rgba(100, 255, 218, 0.15),
+                0 0 40px rgba(147, 112, 219, 0.6),
+                inset 0 0 30px rgba(147, 112, 219, 0.15),
                 0 15px 50px rgba(0, 0, 0, 0.6);
             transform: translateX(-50%) translateY(-3px);
         }
@@ -236,13 +236,13 @@
             position: relative;
             padding: 0.5rem 0;
             white-space: nowrap;
-            text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+            text-shadow: 0 0 10px rgba(147, 112, 219, 0.3);
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            color: #ba55d3;
+            text-shadow: 0 0 20px rgba(186, 85, 211, 0.8);
         }
 
         .nav-links a::after {
@@ -252,11 +252,11 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #9370db, #00ffff);
+            background: linear-gradient(90deg, #9370db, #ba55d3);
             transition: all 0.3s ease;
             transform: translateX(-50%);
             border-radius: 1px;
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+            box-shadow: 0 0 10px rgba(147, 112, 219, 0.8);
         }
 
         .nav-links a:hover::after,
@@ -280,7 +280,7 @@
         .page-header h1 {
             font-family: 'Space Grotesk', 'Inter', sans-serif !important;
             font-size: 3rem;
-            background: linear-gradient(135deg, #9370db 0%, #00ffff 25%, #9370db 50%, #ba55d3 75%, #9370db 100%);
+            background: linear-gradient(135deg, #9370db 0%, #ba55d3 25%, #9370db 50%, #ba55d3 75%, #9370db 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -288,7 +288,7 @@
             margin-bottom: 1rem;
             font-weight: 900;
             animation: textShine 3s ease-in-out infinite;
-            text-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+            text-shadow: 0 0 30px rgba(147, 112, 219, 0.5);
             letter-spacing: 3px;
             text-transform: uppercase;
         }
@@ -322,14 +322,14 @@
         .contact-info,
         .contact-form {
             background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(147, 112, 219, 0.2);
             border-radius: 30px;
             padding: 4rem;
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             position: relative;
             animation: fadeInLeft 1s ease-out;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 40px rgba(147, 112, 219, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .contact-form {
@@ -346,7 +346,7 @@
             height: 3px;
             background: linear-gradient(90deg, #9370db, #ba55d3, #9370db);
             border-radius: 30px 30px 0 0;
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
+            box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
         }
 
         .section-title {
@@ -356,7 +356,7 @@
             margin-bottom: 2rem;
             font-weight: 700;
             text-align: left;
-            text-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
+            text-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
         }
 
         .contact-item {
@@ -364,16 +364,16 @@
             align-items: center;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: rgba(100, 255, 218, 0.05);
+            background: rgba(147, 112, 219, 0.05);
             border-radius: 15px;
-            border: 1px solid rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(147, 112, 219, 0.1);
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
             transform: translateY(-5px);
-            border-color: rgba(100, 255, 218, 0.3);
-            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+            border-color: rgba(147, 112, 219, 0.3);
+            box-shadow: 0 10px 20px rgba(147, 112, 219, 0.2);
         }
 
         .contact-icon {
@@ -423,7 +423,7 @@
             width: 100%;
             padding: 1rem;
             background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(147, 112, 219, 0.2);
             border-radius: 10px;
             color: white;
             font-size: 1rem;
@@ -433,7 +433,7 @@
         .form-control:focus {
             outline: none;
             border-color: #9370db;
-            box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 0 3px rgba(147, 112, 219, 0.1);
         }
 
         .form-control::placeholder {
@@ -461,7 +461,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(100, 255, 218, 0.4);
+            box-shadow: 0 15px 30px rgba(147, 112, 219, 0.4);
         }
 
         .social-links {
@@ -478,8 +478,8 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background: rgba(100, 255, 218, 0.1);
-            border: 2px solid rgba(100, 255, 218, 0.3);
+            background: rgba(147, 112, 219, 0.1);
+            border: 2px solid rgba(147, 112, 219, 0.3);
             border-radius: 50%;
             color: #9370db;
             font-size: 1.5rem;
@@ -489,14 +489,14 @@
 
         .social-link:hover {
             transform: translateY(-5px) scale(1.1);
-            background: rgba(100, 255, 218, 0.2);
+            background: rgba(147, 112, 219, 0.2);
             border-color: #9370db;
-            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+            box-shadow: 0 10px 20px rgba(147, 112, 219, 0.3);
         }
 
         .chess-section {
             background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(147, 112, 219, 0.2);
             border-radius: 30px;
             padding: 3rem;
             margin-top: 3rem;
@@ -504,7 +504,7 @@
             backdrop-filter: blur(30px);
             position: relative;
             animation: fadeInUp 1s ease-out 0.5s both;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 40px rgba(147, 112, 219, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .chess-section::before {
@@ -516,7 +516,7 @@
             height: 3px;
             background: linear-gradient(90deg, #9370db, #ba55d3, #9370db);
             border-radius: 30px 30px 0 0;
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
+            box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
         }
 
         .chess-icon {
@@ -651,8 +651,8 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(147, 112, 219, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(147, 112, 219, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: -1;
             pointer-events: none;
@@ -679,8 +679,8 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse at top left, rgba(100, 255, 218, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at top right, rgba(0, 188, 212, 0.15) 0%, transparent 50%);
+                radial-gradient(ellipse at top left, rgba(147, 112, 219, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at top right, rgba(186, 85, 211, 0.15) 0%, transparent 50%);
             z-index: -999;
             pointer-events: none;
         }
@@ -702,7 +702,7 @@
             border-radius: 50%;
             opacity: 0.15;
             animation: float 20s infinite linear;
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+            box-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
         }
 
         @keyframes float {
@@ -739,8 +739,8 @@
             z-index: 1000;
             border: 2px solid #9370db;
             box-shadow:
-                0 0 30px rgba(100, 255, 218, 0.4),
-                inset 0 0 20px rgba(100, 255, 218, 0.1),
+                0 0 30px rgba(147, 112, 219, 0.4),
+                inset 0 0 20px rgba(147, 112, 219, 0.1),
                 0 10px 40px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
             max-width: calc(100vw - 40px);
@@ -774,10 +774,10 @@
 
         .navbar:hover {
             background: rgba(0, 0, 0, 0.95);
-            border-color: #00ffff;
+            border-color: #ba55d3;
             box-shadow:
-                0 0 40px rgba(100, 255, 218, 0.6),
-                inset 0 0 30px rgba(100, 255, 218, 0.15),
+                0 0 40px rgba(147, 112, 219, 0.6),
+                inset 0 0 30px rgba(147, 112, 219, 0.15),
                 0 15px 50px rgba(0, 0, 0, 0.6);
             transform: translateX(-50%) translateY(-3px);
         }
@@ -801,13 +801,13 @@
             position: relative;
             padding: 0.5rem 0;
             white-space: nowrap;
-            text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+            text-shadow: 0 0 10px rgba(147, 112, 219, 0.3);
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            color: #ba55d3;
+            text-shadow: 0 0 20px rgba(186, 85, 211, 0.8);
         }
 
         .nav-links a::after {
@@ -817,11 +817,11 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #9370db, #00ffff);
+            background: linear-gradient(90deg, #9370db, #ba55d3);
             transition: all 0.3s ease;
             transform: translateX(-50%);
             border-radius: 1px;
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+            box-shadow: 0 0 10px rgba(147, 112, 219, 0.8);
         }
 
         .nav-links a:hover::after,
@@ -845,7 +845,7 @@
         .page-header h1 {
             font-family: 'Space Grotesk', 'Inter', sans-serif !important;
             font-size: 4rem;
-            background: linear-gradient(135deg, #9370db 0%, #00ffff 25%, #9370db 50%, #ba55d3 75%, #9370db 100%);
+            background: linear-gradient(135deg, #9370db 0%, #ba55d3 25%, #9370db 50%, #ba55d3 75%, #9370db 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -853,7 +853,7 @@
             margin-bottom: 1rem;
             font-weight: 900;
             animation: textShine 3s ease-in-out infinite;
-            text-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+            text-shadow: 0 0 30px rgba(147, 112, 219, 0.5);
             letter-spacing: 3px;
             text-transform: uppercase;
         }
@@ -887,14 +887,14 @@
         .contact-info,
         .contact-form {
             background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(147, 112, 219, 0.2);
             border-radius: 30px;
             padding: 4rem;
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             position: relative;
             animation: fadeInLeft 1s ease-out;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 40px rgba(147, 112, 219, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .contact-form {
@@ -911,7 +911,7 @@
             height: 3px;
             background: linear-gradient(90deg, #9370db, #ba55d3, #9370db);
             border-radius: 30px 30px 0 0;
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
+            box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
         }
 
         .section-title {
@@ -921,7 +921,7 @@
             margin-bottom: 2rem;
             font-weight: 700;
             text-align: left;
-            text-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
+            text-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
         }
 
         .contact-item {
@@ -929,16 +929,16 @@
             align-items: center;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: rgba(100, 255, 218, 0.05);
+            background: rgba(147, 112, 219, 0.05);
             border-radius: 15px;
-            border: 1px solid rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(147, 112, 219, 0.1);
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
             transform: translateY(-5px);
-            border-color: rgba(100, 255, 218, 0.3);
-            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+            border-color: rgba(147, 112, 219, 0.3);
+            box-shadow: 0 10px 20px rgba(147, 112, 219, 0.2);
         }
 
         .contact-icon {
@@ -988,7 +988,7 @@
             width: 100%;
             padding: 1rem;
             background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(147, 112, 219, 0.2);
             border-radius: 10px;
             color: white;
             font-size: 1rem;
@@ -998,7 +998,7 @@
         .form-control:focus {
             outline: none;
             border-color: #9370db;
-            box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 0 3px rgba(147, 112, 219, 0.1);
         }
 
         .form-control::placeholder {
@@ -1026,7 +1026,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(100, 255, 218, 0.4);
+            box-shadow: 0 15px 30px rgba(147, 112, 219, 0.4);
         }
 
         .social-links {
@@ -1043,8 +1043,8 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background: rgba(100, 255, 218, 0.1);
-            border: 2px solid rgba(100, 255, 218, 0.3);
+            background: rgba(147, 112, 219, 0.1);
+            border: 2px solid rgba(147, 112, 219, 0.3);
             border-radius: 50%;
             color: #9370db;
             font-size: 1.5rem;
@@ -1054,14 +1054,14 @@
 
         .social-link:hover {
             transform: translateY(-5px) scale(1.1);
-            background: rgba(100, 255, 218, 0.2);
+            background: rgba(147, 112, 219, 0.2);
             border-color: #9370db;
-            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+            box-shadow: 0 10px 20px rgba(147, 112, 219, 0.3);
         }
 
         .chess-section {
             background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(147, 112, 219, 0.2);
             border-radius: 30px;
             padding: 3rem;
             margin-top: 3rem;
@@ -1069,7 +1069,7 @@
             backdrop-filter: blur(30px);
             position: relative;
             animation: fadeInUp 1s ease-out 0.5s both;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 40px rgba(147, 112, 219, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .chess-section::before {
@@ -1081,7 +1081,7 @@
             height: 3px;
             background: linear-gradient(90deg, #9370db, #ba55d3, #9370db);
             border-radius: 30px 30px 0 0;
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
+            box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
         }
 
         .chess-icon {
@@ -1242,12 +1242,12 @@
             padding: 4rem 2rem;
             color: rgba(255, 255, 255, 0.8);
             font-size: 1.2rem;
-            border-top: 2px solid rgba(100, 255, 218, 0.3);
+            border-top: 2px solid rgba(147, 112, 219, 0.3);
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             font-weight: 500;
-            box-shadow: 0 -10px 30px rgba(100, 255, 218, 0.1);
+            box-shadow: 0 -10px 30px rgba(147, 112, 219, 0.1);
         }
 
         .footer p {
