@@ -301,6 +301,62 @@
             box-shadow: 0 0 10px rgba(147, 112, 219, 0.8);
         }
 
+        /* WHITE STARS / BUBBLES */
+        .white-star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 4s infinite ease-in-out;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* NEON REFLECTION EFFECT */
+        .neon-reflection {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neon-reflection::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: skewX(-25deg);
+            animation: reflect 6s infinite;
+        }
+
+        @keyframes reflect {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 200%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
         .nav-links a:hover::after,
         .nav-links a.active::after {
             width: 100%;
@@ -350,15 +406,12 @@
         .page-header p {
             font-family: 'JetBrains Mono', monospace !important;
             font-size: 1.5rem;
-            background: linear-gradient(135deg, #e0b3ff 0%, #c79eff 50%, #b589ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
             text-align: left;
             font-weight: 600;
             max-width: 600px;
             margin: 0;
-            text-shadow: 0 0 15px rgba(186, 85, 211, 0.4);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             letter-spacing: 0.5px;
             line-height: 1.8;
         }
@@ -523,7 +576,7 @@
         }
 
         .timeline-desc {
-            color: rgba(255, 255, 255, 0.9);
+            color: #ffffff;
             line-height: 1.8;
             margin-bottom: 1rem;
         }
@@ -535,7 +588,7 @@
 
         .timeline-highlights li {
             position: relative;
-            color: rgba(255, 255, 255, 0.8);
+            color: #ffffff;
             margin-bottom: 0.5rem;
             padding-left: 1.5rem;
         }
@@ -1298,12 +1351,14 @@
         .footer {
             text-align: left;
             padding: 4rem 2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: #ffffff;
             font-size: 1.2rem;
             border-top: 2px solid rgba(147, 112, 219, 0.3);
             background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 10;
+            font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
             box-shadow: 0 -10px 30px rgba(147, 112, 219, 0.1);
         }
@@ -1318,8 +1373,7 @@
     <!-- Animated background particles -->
     <div class="particles"></div>
 
-    <nav class="navbar">
-        <div class="nav-status">SYSTEM: ONLINE</div>
+    <nav class="navbar btn-primary neon-reflection">
         <ul class="nav-links">
             <li><a href="/my-portfolio-website/">Home</a></li>
             <li><a href="/my-portfolio-website/about/" class="active">About</a></li>
@@ -1453,6 +1507,11 @@
         });
 
         window.addEventListener('load', createParticles);
+        // Create circuit nodes
+        for (let i = 0; i < 100; i++) {
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(star);
+        }
     </script>
 
     <footer class="footer">

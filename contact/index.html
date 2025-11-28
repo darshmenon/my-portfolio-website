@@ -1282,12 +1282,15 @@
         .footer {
             text-align: left;
             padding: 4rem 2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: #ffffff;
             font-size: 1.2rem;
             border-top: 2px solid rgba(147, 112, 219, 0.3);
             background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(15px);
+            position: relative;
+            z-index: 10;
+            font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
             box-shadow: 0 -10px 30px rgba(147, 112, 219, 0.1);
         }
@@ -1300,8 +1303,7 @@
 <body>
     <div class="particles"></div>
 
-    <nav class="navbar">
-        <div class="nav-status">SYSTEM: ONLINE</div>
+    <nav class="btn-primary neon-reflection">
         <ul class="nav-links">
             <li><a href="/my-portfolio-website/">Home</a></li>
             <li><a href="/my-portfolio-website/about/">About</a></li>
@@ -1325,11 +1327,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em"
-                            fill="currentColor">
-                            <path
-                                d="M504 256c0 1.139-.023 2.277-.07 3.411L285.5 448.97c-7.9 6.273-19.1 6.273-27.001 0L7.999 259.411C7.949 258.277 7.9 257.139 7.9 256c0-141.385 114.615-256 256-256S504 114.615 504 256zM256 0c141.385 0 256 114.615 256 256c0 1.139-.023 2.277-.07 3.411L285.5 448.97c-7.9 6.273-19.1 6.273-27.001 0L7.999 259.411C7.949 258.277 7.9 257.139 7.9 256C7.9 114.615 122.515 0 263.9 0h-7.9c-141.385 0-256 114.615-256 256z" />
-                        </svg>
+                        <i class="fas fa-envelope"></i>
                     </div>
                     <div class="contact-details">
                         <h3>Email</h3>
@@ -1339,11 +1337,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="1em" height="1em"
-                            fill="currentColor">
-                            <path
-                                d="M416 32H36.347c-21.6 0-36.347 14.747-36.347 36.347v403.306C0 475.253 14.747 490 36.347 490H416c21.6 0 36.347-14.747 36.347-36.347V68.347C452.347 46.747 437.6 32 416 32zM151.714 399.972H99.278V209.682h52.436v190.29zM125.496 186.294c-19.467 0-35.347-15.88-35.347-35.347s15.88-35.347 35.347-35.347c19.467 0 35.347 15.88 35.347 35.347s-15.88 35.347-35.347 35.347zM352.736 399.972H299.78V296.883c0-24.167-.45-55.228-33.684-55.228-33.722 0-38.826 26.31-38.826 53.535v104.781h-52.955V209.682h50.916v23.275h.693c7.103-13.56 24.364-27.842 50.155-27.842 53.64 0 63.504 35.297 63.504 81.085v113.844z" />
-                        </svg>
+                        <i class="fab fa-linkedin"></i>
                     </div>
                     <div class="contact-details">
                         <h3>LinkedIn</h3>
@@ -1354,11 +1348,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="1em" height="1em"
-                            fill="currentColor">
-                            <path
-                                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
-                        </svg>
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-details">
                         <h3>Location</h3>
@@ -1368,11 +1358,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="1em" height="1em"
-                            fill="currentColor">
-                            <path
-                                d="M32,224H64V416H32A31.96166,31.96166,0,0,1,0,384V256A31.96166,31.96166,0,0,1,32,224Zm512-48V448a64.06328,64.06328,0,0,1-64,64H160a64.06328,64.06328,0,0,1-64-64V176a79.974,79.974,0,0,1,80-80H288V32a32,32,0,0,1,64,0V96H464A79.974,79.974,0,0,1,544,176Z" />
-                        </svg>
+                        <i class="fas fa-robot"></i>
                     </div>
                     <div class="contact-details">
                         <h3>Specialization</h3>
@@ -1406,7 +1392,7 @@
                             placeholder="Tell me about your robotics project or question..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary">Send Message
+                    <button type="submit" class="btn-primary neon-reflection">Send Message
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em"
                             fill="currentColor" style="margin-left: 0.5rem;">
                             <path
@@ -1525,6 +1511,11 @@
         });
 
         window.addEventListener('load', createParticles);
+        // Create circuit nodes
+        for (let i = 0; i < 100; i++) {
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(star);
+        }
     </script>
 
     <footer class="footer">
