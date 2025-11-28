@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', 'Segoe UI', sans-serif;
             line-height: 1.6;
@@ -57,7 +58,8 @@
             transition: all 0.3s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: #64ffda;
             text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
@@ -69,7 +71,7 @@
         }
 
         .page-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 5rem;
             animation: fadeInDown 1s ease-out;
         }
@@ -88,7 +90,7 @@
             font-size: 1.4rem;
             color: rgba(255, 255, 255, 0.8);
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0;
         }
 
         .blog-grid {
@@ -362,6 +364,7 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -373,6 +376,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -419,21 +423,23 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
-<ul class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about" class="active">About</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/contact">Contact</a></li>
-</ul>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
 
     </nav>
 
     <div class="container">
         <div class="page-header">
             <h1>Engineering Insights</h1>
-            <p>Sharing practical knowledge, tutorials, and insights from the frontlines of robotics development. From ROS 2 navigation to autonomous systems - learn how to build the future.</p>
+            <p>Sharing practical knowledge, tutorials, and insights from the frontlines of robotics development. From
+                ROS 2 navigation to autonomous systems - learn how to build the future.</p>
         </div>
 
         <!-- Blog Stats -->
@@ -468,8 +474,9 @@
                 </div>
                 <div class="blog-content">
                     <span class="blog-category">ROS 2 Tutorial</span>
-                    <h2 class="blog-title">Mastering ROS 2 Navigation: From SLAM Mapping to Autonomous Obstacle Avoidance</h2>
-                    
+                    <h2 class="blog-title">Mastering ROS 2 Navigation: From SLAM Mapping to Autonomous Obstacle
+                        Avoidance</h2>
+
                     <div class="blog-meta">
                         <div class="blog-meta-item">
                             <span>📅</span>
@@ -482,7 +489,9 @@
                     </div>
 
                     <p class="blog-excerpt">
-                        A comprehensive deep-dive into building robust autonomous navigation systems using ROS 2 Jazzy. Learn how to implement SLAM mapping, configure costmaps, tune navigation parameters, and achieve real-time obstacle avoidance with practical code examples and real-world testing scenarios.
+                        A comprehensive deep-dive into building robust autonomous navigation systems using ROS 2 Jazzy.
+                        Learn how to implement SLAM mapping, configure costmaps, tune navigation parameters, and achieve
+                        real-time obstacle avoidance with practical code examples and real-world testing scenarios.
                     </p>
 
                     <div class="blog-tags">
@@ -494,7 +503,8 @@
                         <span class="blog-tag">LiDAR</span>
                     </div>
 
-                    <a href="https://medium.com/@darshmenon02/mastering-ros-2-navigation-from-slam-mapping-to-autonomous-obstacle-avoidance-7446e4ff049a" target="_blank" class="blog-link">
+                    <a href="https://medium.com/@darshmenon02/mastering-ros-2-navigation-from-slam-mapping-to-autonomous-obstacle-avoidance-7446e4ff049a"
+                        target="_blank" class="blog-link">
                         Read Full Article →
                     </a>
                 </div>
@@ -503,12 +513,13 @@
             <!-- Article 2: Pick and Place System -->
             <article class="blog-card">
                 <div class="blog-image pick-place">
-                    
+
                 </div>
                 <div class="blog-content">
                     <span class="blog-category">Robotics Project</span>
-                    <h2 class="blog-title">How I'm Building an Autonomous Pick-and-Place System with ROS 2 Jazzy and Gazebo Harmonic</h2>
-                    
+                    <h2 class="blog-title">How I'm Building an Autonomous Pick-and-Place System with ROS 2 Jazzy and
+                        Gazebo Harmonic</h2>
+
                     <div class="blog-meta">
                         <div class="blog-meta-item">
                             <span>📅</span>
@@ -521,7 +532,9 @@
                     </div>
 
                     <p class="blog-excerpt">
-                        Step-by-step walkthrough of developing a complete autonomous robotic arm system using MoveIt 2 and advanced computer vision. From inverse kinematics planning to collision-aware task execution, discover how to build production-ready pick-and-place automation.
+                        Step-by-step walkthrough of developing a complete autonomous robotic arm system using MoveIt 2
+                        and advanced computer vision. From inverse kinematics planning to collision-aware task
+                        execution, discover how to build production-ready pick-and-place automation.
                     </p>
 
                     <div class="blog-tags">
@@ -533,7 +546,8 @@
                         <span class="blog-tag">OpenCV</span>
                     </div>
 
-                    <a href="https://medium.com/@darshmenon02/how-i-am-building-an-autonomous-pick-and-place-system-with-ros-2-jazzy-and-gazebo-harmonic-6474cbcc8dc7" target="_blank" class="blog-link">
+                    <a href="https://medium.com/@darshmenon02/how-i-am-building-an-autonomous-pick-and-place-system-with-ros-2-jazzy-and-gazebo-harmonic-6474cbcc8dc7"
+                        target="_blank" class="blog-link">
                         Read Full Article →
                     </a>
                 </div>
@@ -544,7 +558,8 @@
         <div class="cta-section">
             <h2 class="cta-title">Stay Updated on Latest Robotics Insights</h2>
             <p class="cta-text">
-                Follow my journey as I explore cutting-edge robotics technologies, share practical tutorials, and document real-world engineering challenges. New technical articles published regularly on Medium.
+                Follow my journey as I explore cutting-edge robotics technologies, share practical tutorials, and
+                document real-world engineering challenges. New technical articles published regularly on Medium.
             </p>
             <div class="cta-buttons">
                 <a href="https://medium.com/@darshmenon02" target="_blank" class="cta-button primary">
@@ -560,17 +575,26 @@
         <div class="stats-section">
             <h2 style="color: #64ffda; font-size: 2.2rem; margin-bottom: 2rem; font-weight: 700;"> Coming Soon</h2>
             <div style="text-align: left; max-width: 800px; margin: 0 auto;">
-                <div style="background: rgba(100, 255, 218, 0.05); border-left: 4px solid #64ffda; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
-                    <h3 style="color: #64ffda; margin-bottom: 1rem; font-size: 1.3rem;">Multi-Robot Coordination Systems</h3>
-                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Deep dive into distributed robotics, swarm intelligence, and coordinated task execution using ROS 2's latest features.</p>
+                <div
+                    style="background: rgba(100, 255, 218, 0.05); border-left: 4px solid #64ffda; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h3 style="color: #64ffda; margin-bottom: 1rem; font-size: 1.3rem;">Multi-Robot Coordination Systems
+                    </h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Deep dive into distributed robotics,
+                        swarm intelligence, and coordinated task execution using ROS 2's latest features.</p>
                 </div>
-                <div style="background: rgba(0, 188, 212, 0.05); border-left: 4px solid #00bcd4; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
-                    <h3 style="color: #00bcd4; margin-bottom: 1rem; font-size: 1.3rem;">Computer Vision for Real-Time Robot Perception</h3>
-                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Practical implementation of advanced CV algorithms for dynamic object tracking, scene understanding, and adaptive behavior.</p>
+                <div
+                    style="background: rgba(0, 188, 212, 0.05); border-left: 4px solid #00bcd4; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h3 style="color: #00bcd4; margin-bottom: 1rem; font-size: 1.3rem;">Computer Vision for Real-Time
+                        Robot Perception</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Practical implementation of advanced
+                        CV algorithms for dynamic object tracking, scene understanding, and adaptive behavior.</p>
                 </div>
-                <div style="background: rgba(3, 169, 244, 0.05); border-left: 4px solid #03a9f4; padding: 1.5rem; border-radius: 10px;">
-                    <h3 style="color: #03a9f4; margin-bottom: 1rem; font-size: 1.3rem;">From Simulation to Reality: Deployment Strategies</h3>
-                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Bridging the sim-to-real gap with proven techniques for deploying Gazebo-trained models to physical robots.</p>
+                <div
+                    style="background: rgba(3, 169, 244, 0.05); border-left: 4px solid #03a9f4; padding: 1.5rem; border-radius: 10px;">
+                    <h3 style="color: #03a9f4; margin-bottom: 1rem; font-size: 1.3rem;">From Simulation to Reality:
+                        Deployment Strategies</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Bridging the sim-to-real gap with
+                        proven techniques for deploying Gazebo-trained models to physical robots.</p>
                 </div>
             </div>
         </div>
@@ -583,7 +607,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -602,12 +626,12 @@
 
         // Enhanced hover effects for blog cards
         document.querySelectorAll('.blog-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-20px) scale(1.02)';
                 this.style.boxShadow = '0 40px 80px rgba(100, 255, 218, 0.25)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
                 this.style.boxShadow = 'none';
             });
@@ -615,7 +639,7 @@
 
         // Animate stats on scroll
         let statsAnimated = false;
-        const statsObserver = new IntersectionObserver(function(entries) {
+        const statsObserver = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !statsAnimated) {
                     statsAnimated = true;
@@ -650,25 +674,25 @@
 
         function animateNumber(element, start, end, suffix, duration) {
             const startTime = performance.now();
-            
+
             function update(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                
+
                 const current = Math.floor(start + (end - start) * progress);
                 element.textContent = current + suffix;
-                
+
                 if (progress < 1) {
                     requestAnimationFrame(update);
                 }
             }
-            
+
             requestAnimationFrame(update);
         }
 
         // Add reading progress indicators
         document.querySelectorAll('.blog-link').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 // Add subtle click animation
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
@@ -679,13 +703,13 @@
 
         // Add dynamic tag hover effects
         document.querySelectorAll('.blog-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
+            tag.addEventListener('mouseenter', function () {
                 this.style.transform = 'scale(1.1)';
                 this.style.borderColor = 'rgba(0, 188, 212, 0.5)';
                 this.style.backgroundColor = 'rgba(0, 188, 212, 0.2)';
             });
-            
-            tag.addEventListener('mouseleave', function() {
+
+            tag.addEventListener('mouseleave', function () {
                 this.style.transform = 'scale(1)';
                 this.style.borderColor = 'rgba(0, 188, 212, 0.2)';
                 this.style.backgroundColor = 'rgba(0, 188, 212, 0.1)';
@@ -693,4 +717,5 @@
         });
     </script>
 </body>
+
 </html>

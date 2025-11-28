@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', 'Segoe UI', sans-serif;
             line-height: 1.6;
@@ -57,7 +58,8 @@
             transition: all 0.3s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: #64ffda;
             text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
@@ -69,7 +71,7 @@
         }
 
         .page-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 5rem;
             animation: fadeInDown 1s ease-out;
         }
@@ -88,7 +90,7 @@
             font-size: 1.4rem;
             color: rgba(255, 255, 255, 0.8);
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0;
         }
 
         .contact-grid {
@@ -341,6 +343,7 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -352,6 +355,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -363,6 +367,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -374,6 +379,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -405,27 +411,29 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
-<ul class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about" class="active">About</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/contact">Contact</a></li>
-</ul>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
 
     </nav>
 
     <div class="container">
         <div class="page-header">
             <h1>Let's Connect</h1>
-            <p>Ready to collaborate on groundbreaking robotics projects? Have a question about ROS 2 or autonomous systems? Let's start a conversation!</p>
+            <p>Ready to collaborate on groundbreaking robotics projects? Have a question about ROS 2 or autonomous
+                systems? Let's start a conversation!</p>
         </div>
 
         <div class="contact-grid">
             <div class="contact-info">
                 <h2 class="section-title">Get In Touch</h2>
-                
+
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <div class="contact-details">
@@ -438,7 +446,8 @@
                     <div class="contact-icon">💼</div>
                     <div class="contact-details">
                         <h3>LinkedIn</h3>
-                        <p><a href="https://www.linkedin.com/in/darsh-menon/" target="_blank">linkedin.com/in/darsh-menon</a></p>
+                        <p><a href="https://www.linkedin.com/in/darsh-menon/"
+                                target="_blank">linkedin.com/in/darsh-menon</a></p>
                     </div>
                 </div>
 
@@ -466,22 +475,24 @@
                         <label for="name">Your Name</label>
                         <input type="text" class="form-control" id="name" placeholder="John Doe" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" class="form-control" id="email" placeholder="john@example.com" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" class="form-control" id="subject" placeholder="Robotics Collaboration Opportunity">
+                        <input type="text" class="form-control" id="subject"
+                            placeholder="Robotics Collaboration Opportunity">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea class="form-control" id="message" placeholder="Tell me about your robotics project or question..." required></textarea>
+                        <textarea class="form-control" id="message"
+                            placeholder="Tell me about your robotics project or question..." required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn-primary">Send Message </button>
                 </form>
             </div>
@@ -492,7 +503,8 @@
             <div class="chess-icon">♛</div>
             <h3 class="chess-title">Chess Enthusiast</h3>
             <p class="chess-desc">
-                When I'm not programming robots, you'll find me strategizing on the chessboard. The analytical thinking and pattern recognition skills from chess translate beautifully into robotics algorithms!
+                When I'm not programming robots, you'll find me strategizing on the chessboard. The analytical thinking
+                and pattern recognition skills from chess translate beautifully into robotics algorithms!
             </p>
             <a href="https://www.chess.com/member/darshthegreat" target="_blank" class="chess-link">
                 Challenge me on Chess.com ♟️
@@ -518,44 +530,44 @@
 
     <script>
         // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
+
             // Create mailto link
             const mailtoLink = `mailto:darshmenon02@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Website')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
+
             // Open mail client
             window.location.href = mailtoLink;
-            
+
             // Show success message
             alert('Opening your email client... Please send the message to complete contact.');
         });
 
         // Add hover animations to contact items
         document.querySelectorAll('.contact-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
+            item.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-5px) scale(1.02)';
             });
-            
-            item.addEventListener('mouseleave', function() {
+
+            item.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
 
         // Add typing animation to form inputs
         document.querySelectorAll('.form-control').forEach(input => {
-            input.addEventListener('focus', function() {
+            input.addEventListener('focus', function () {
                 this.style.borderColor = '#64ffda';
                 this.style.boxShadow = '0 0 0 3px rgba(100, 255, 218, 0.2)';
             });
-            
-            input.addEventListener('blur', function() {
+
+            input.addEventListener('blur', function () {
                 this.style.borderColor = 'rgba(100, 255, 218, 0.2)';
                 this.style.boxShadow = 'none';
             });
@@ -567,7 +579,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -585,4 +597,5 @@
         });
     </script>
 </body>
+
 </html>
