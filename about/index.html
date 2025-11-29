@@ -196,7 +196,7 @@
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: #9370db;
+            color: #da70d6;
             font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
             font-size: 1.2rem;
@@ -787,15 +787,15 @@
                 top: 10px;
                 left: 50%;
                 transform: translateX(-50%);
-                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                padding: 0.6rem 1rem;
                 max-width: calc(100vw - 20px);
                 width: auto;
                 border-radius: 25px;
             }
 
+            /* Hide arrow on mobile */
             .navbar::before {
-                left: 15px;
-                font-size: 1rem;
+                display: none;
             }
 
             .nav-links {
@@ -807,6 +807,16 @@
             .nav-links a {
                 font-size: 0.85rem;
                 padding: 0.3rem 0;
+            }
+
+            /* Hide "Hub" text on mobile */
+            .mobile-hide {
+                display: none;
+            }
+
+            /* Ensure paragraph text is white */
+            p {
+                color: #ffffff !important;
             }
 
             .navbar:active,
@@ -1447,7 +1457,7 @@
             <li><a href="/my-portfolio-website/blog/">Blog</a></li>
             <li><a href="/my-portfolio-website/contact/">Contact</a></li>
             <li><a href="/my-portfolio-website/projects/">Projects</a></li>
-            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud Hub</a></li>
+            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud<span class="mobile-hide"> Hub</span></a></li>
         </ul>
     </nav>
 

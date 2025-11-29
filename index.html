@@ -1745,15 +1745,15 @@
                 top: 10px;
                 left: 50%;
                 transform: translateX(-50%);
-                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                padding: 0.6rem 1rem;
                 max-width: calc(100vw - 20px);
                 width: auto;
                 border-radius: 25px;
             }
 
+            /* Hide arrow on mobile */
             .navbar::before {
-                left: 15px;
-                font-size: 1rem;
+                display: none;
             }
 
             .nav-links {
@@ -1765,6 +1765,16 @@
             .nav-links a {
                 font-size: 0.85rem;
                 padding: 0.3rem 0;
+            }
+
+            /* Hide "Hub" text on mobile */
+            .mobile-hide {
+                display: none;
+            }
+
+            /* Ensure paragraph text is white */
+            p {
+                color: #ffffff !important;
             }
 
             .container {
@@ -1892,7 +1902,7 @@
             <li><a href="/my-portfolio-website/blog/">Blog</a></li>
             <li><a href="/my-portfolio-website/contact/">Contact</a></li>
             <li><a href="/my-portfolio-website/projects/">Projects</a></li>
-            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud Hub</a></li>
+            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud<span class="mobile-hide"> Hub</span></a></li>
         </ul>
     </nav>
 
@@ -2232,7 +2242,7 @@
         // Create floating particles and circuit nodes
         function createParticles() {
             const particles = document.querySelector('.particles');
-            const colors = ['#da70d6', '#9370db', '#9370db', '#2196f3'];
+            const colors = ['#ffffff'];
 
             for (let i = 0; i < 12; i++) {
                 const particle = document.createElement('div');
