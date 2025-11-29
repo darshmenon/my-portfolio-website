@@ -1763,7 +1763,7 @@
             }
 
             .nav-links a {
-                font-size: 0.85rem;
+                font-size: 0.75rem;
                 padding: 0.3rem 0;
             }
 
@@ -1775,6 +1775,11 @@
             /* Ensure paragraph text is white */
             p {
                 color: #ffffff !important;
+            }
+
+            /* Hide arrow on mobile */
+            .navbar::before {
+                display: none;
             }
 
             .container {
@@ -1902,7 +1907,7 @@
             <li><a href="/my-portfolio-website/blog/">Blog</a></li>
             <li><a href="/my-portfolio-website/contact/">Contact</a></li>
             <li><a href="/my-portfolio-website/projects/">Projects</a></li>
-            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud<span class="mobile-hide"> Hub</span></a></li>
+            <li><a href="/my-portfolio-website/robocloud-hub/">RoboCloud</a></li>
         </ul>
     </nav>
 
