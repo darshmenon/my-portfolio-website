@@ -844,6 +844,19 @@
             .education-card:hover {
                 transform: none;
             }
+
+            /* UI Panel Mobile Adjustments */
+            .ui-content {
+                padding: 1.5rem !important;
+            }
+
+            .ui-panel-header {
+                padding: 0.6rem 1rem !important;
+            }
+
+            .ui-title {
+                font-size: 0.9rem !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1717,6 +1730,90 @@
         .footer p {
             margin: 0.5rem 0;
         }
+
+        /* UI PANEL STYLES */
+        .ui-panel {
+            background: rgba(13, 2, 33, 0.7);
+            border: 1px solid rgba(147, 112, 219, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            position: relative;
+            animation: sectionFadeIn 1s ease-out;
+        }
+
+        .ui-panel-header {
+            background: rgba(147, 112, 219, 0.15);
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(147, 112, 219, 0.3);
+        }
+
+        .ui-title {
+            font-family: 'JetBrains Mono', monospace !important;
+            color: #da70d6;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ui-title::before {
+            content: '>';
+            color: #9370db;
+            animation: blink 1.5s infinite;
+        }
+
+        .ui-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .ui-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(147, 112, 219, 0.3);
+        }
+
+        .ui-dot:nth-child(1) {
+            background: #ff5f56;
+        }
+
+        .ui-dot:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .ui-dot:nth-child(3) {
+            background: #27c93f;
+        }
+
+        .ui-content {
+            padding: 3rem;
+            position: relative;
+        }
+
+        /* Grid overlay for panels */
+        .ui-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(147, 112, 219, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(147, 112, 219, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 0;
+        }
     </style>
 </head>
 
@@ -1759,76 +1856,94 @@
         </section>
 
         <!-- Work Experience -->
-        <section class="section">
-            <h2>// Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Feb 2025 - Present</div>
-                    <div class="timeline-title">Robotics Software Engineer</div>
-                    <div class="timeline-company">Asimov Robotics, Kochi</div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">ROS 2</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">Multi-Robot Systems</span>
-                        <span class="tech-tag">Autonomous Navigation</span>
-                        <span class="tech-tag">RANSAC</span>
-                        <span class="tech-tag">WebSocket</span>
-                    </div>
+        <div class="ui-panel">
+            <div class="ui-panel-header">
+                <div class="ui-title">SYSTEM_LOG: WORK_EXPERIENCE</div>
+                <div class="ui-controls">
+                    <div class="ui-dot"></div>
+                    <div class="ui-dot"></div>
+                    <div class="ui-dot"></div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">June 2024 - Oct 2024</div>
-                    <div class="timeline-title">Software Development Engineer - 1</div>
-                    <div class="timeline-company">Growth Jockey, Gurgaon</div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Full-Stack Development</span>
-                        <span class="tech-tag">Remix</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">FinTech Tools</span>
+            </div>
+            <div class="ui-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Feb 2025 - Present</div>
+                        <div class="timeline-title">Robotics Software Engineer</div>
+                        <div class="timeline-company">Asimov Robotics, Kochi</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">ROS 2</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Multi-Robot Systems</span>
+                            <span class="tech-tag">Autonomous Navigation</span>
+                            <span class="tech-tag">RANSAC</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">July 2023 - Dec 2023</div>
-                    <div class="timeline-title">SDE Intern</div>
-                    <div class="timeline-company">Growth Jockey, Gurgaon</div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Web Rebranding</span>
-                        <span class="tech-tag">Frontend Development</span>
-                        <span class="tech-tag">Lead Generation</span>
-                        <span class="tech-tag">130+ Pages Delivered</span>
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2024 - Oct 2024</div>
+                        <div class="timeline-title">Software Development Engineer - 1</div>
+                        <div class="timeline-company">Growth Jockey, Gurgaon</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Full-Stack Development</span>
+                            <span class="tech-tag">Remix</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">FinTech Tools</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">June 2022 - Aug 2022</div>
-                    <div class="timeline-title">Business Development Intern</div>
-                    <div class="timeline-company">Shriram Automall, Remote</div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Market Analysis</span>
-                        <span class="tech-tag">E-commerce Strategy</span>
-                        <span class="tech-tag">Data Insights</span>
-                        <span class="tech-tag">B2C Expansion</span>
+                    <div class="timeline-item">
+                        <div class="timeline-date">July 2023 - Dec 2023</div>
+                        <div class="timeline-title">SDE Intern</div>
+                        <div class="timeline-company">Growth Jockey, Gurgaon</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Web Rebranding</span>
+                            <span class="tech-tag">Frontend Development</span>
+                            <span class="tech-tag">Lead Generation</span>
+                            <span class="tech-tag">130+ Pages Delivered</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2022 - Aug 2022</div>
+                        <div class="timeline-title">Business Development Intern</div>
+                        <div class="timeline-company">Shriram Automall, Remote</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Market Analysis</span>
+                            <span class="tech-tag">E-commerce Strategy</span>
+                            <span class="tech-tag">Data Insights</span>
+                            <span class="tech-tag">B2C Expansion</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Education -->
-        <section class="section">
-            <h2>// Academic Qualification</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-degree">Bachelor of Engineering (Honors), Mechanical Engineering</div>
-                    <div class="education-school">Birla Institute of Technology & Science, Pilani, Goa</div>
-                    <div class="education-year">2024</div>
-                    <div class="education-details">
-                        CGPA: 7.16/10
+        <div class="ui-panel">
+            <div class="ui-panel-header">
+                <div class="ui-title">SYSTEM_LOG: ACADEMIC_QUALIFICATION</div>
+                <div class="ui-controls">
+                    <div class="ui-dot"></div>
+                    <div class="ui-dot"></div>
+                    <div class="ui-dot"></div>
+                </div>
+            </div>
+            <div class="ui-content">
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-degree">Bachelor of Engineering (Honors), Mechanical Engineering</div>
+                        <div class="education-school">Birla Institute of Technology & Science, Pilani, Goa</div>
+                        <div class="education-year">2024</div>
+                        <div class="education-details">
+                            CGPA: 7.16/10
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <script>
