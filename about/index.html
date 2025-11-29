@@ -759,29 +759,6 @@
                 font-size: 12px;
             }
 
-            body,
-            body * {
-                font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-            }
-
-            h1,
-            h2,
-            .skill-tag,
-            .project-title,
-            .stat-number {
-                font-family: 'Space Grotesk', sans-serif !important;
-            }
-
-            .nav-links a,
-            .project-link {
-                font-family: 'JetBrains Mono', monospace !important;
-            }
-
-            body {
-                background: linear-gradient(135deg, #0d0221 0%, #1a0933 50%, #0d0221 100%);
-                background-attachment: fixed;
-            }
-
             .navbar {
                 position: fixed !important;
                 top: 10px !important;
@@ -835,7 +812,27 @@
             }
 
             .timeline {
-                padding-left: 2rem;
+                padding-left: 1rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                padding: 1.5rem;
+                margin-left: 1rem;
+            }
+
+            .timeline-item::before {
+                left: -2.3rem;
+                top: 2rem;
+            }
+
+            .timeline-item::after {
+                left: -1.5rem;
+                top: 2.4rem;
+                width: 1.5rem;
             }
 
             .education-grid {
@@ -1219,7 +1216,6 @@
         .timeline {
             position: relative;
             padding-left: 3rem;
-            position: relative;
             z-index: 2;
         }
 
@@ -1238,20 +1234,45 @@
         .timeline-item {
             position: relative;
             margin-bottom: 3rem;
-            padding-left: 3rem;
+            padding: 2rem;
+            background: rgba(147, 112, 219, 0.05);
+            border: 1px solid rgba(147, 112, 219, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            background: rgba(147, 112, 219, 0.1);
+            border-color: #ba55d3;
+            box-shadow: 0 0 30px rgba(147, 112, 219, 0.2);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -3.5rem;
-            top: 1rem;
+            left: -2.6rem;
+            top: 2.5rem;
             width: 15px;
             height: 15px;
             background: #9370db;
             border-radius: 50%;
             box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
             animation: pulse 2s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        /* Connecting line from dot to card */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 2.9rem;
+            width: 2rem;
+            height: 2px;
+            background: #9370db;
+            opacity: 0.5;
         }
 
         @keyframes pulse {
@@ -1269,58 +1290,71 @@
         }
 
         .timeline-date {
-            color: #9370db;
+            color: #da70d6;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
             font-family: 'JetBrains Mono', monospace !important;
-            text-shadow: 0 0 10px rgba(147, 112, 219, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border: 1px solid rgba(218, 112, 214, 0.3);
+            border-radius: 20px;
+            background: rgba(218, 112, 214, 0.1);
         }
 
         .timeline-title {
             font-size: 1.5rem;
             color: white;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
+            font-family: 'Space Grotesk', sans-serif !important;
         }
 
         .timeline-company {
             color: #ba55d3;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            text-shadow: 0 0 10px rgba(186, 85, 211, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .timeline-desc {
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.8;
-            margin-bottom: 1rem;
+        .timeline-company i {
+            font-size: 0.9rem;
         }
 
-        .timeline-highlights {
-            list-style: none;
-            padding-left: 1rem;
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
         }
 
-        .timeline-highlights li {
-            position: relative;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
+        .tech-tag {
+            background: rgba(147, 112, 219, 0.15);
+            color: #e0e0e0;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace !important;
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .timeline-highlights li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #9370db;
-            font-size: 0.8rem;
+        .tech-tag:hover {
+            background: rgba(147, 112, 219, 0.3);
+            border-color: #ba55d3;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(147, 112, 219, 0.2);
         }
 
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
             margin-top: 2rem;
             position: relative;
@@ -1406,6 +1440,265 @@
             }
         }
 
+        /* ENHANCED HERO SECTION WITH SCANLINES */
+        .hero {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(147, 112, 219, 0.3);
+            border-radius: 40px;
+            padding: 5rem 4rem;
+            margin-bottom: 4rem;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            box-shadow:
+                0 0 50px rgba(147, 112, 219, 0.3),
+                0 40px 80px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            animation: heroFadeIn 1.2s ease-out;
+        }
+
+        /* Animated top border */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #da70d6 0%, #9370db 25%, #ba55d3 50%, #da70d6 75%, #9370db 100%);
+            background-size: 400% 100%;
+            animation: gradientFlow 4s ease infinite;
+            border-radius: 40px 40px 0 0;
+            box-shadow: 0 0 20px rgba(147, 112, 219, 0.8);
+        }
+
+        /* Rotating gradient background */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(147, 112, 219, 0.05), transparent);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes gradientFlow {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(80px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* CIRCUIT BOARD PROFILE IMAGE */
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin: 0 auto 2.5rem;
+            background: linear-gradient(45deg, #da70d6, #9370db, #ba55d3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: visible;
+            animation: profilePulse 4s ease-in-out infinite;
+            box-shadow:
+                0 0 60px rgba(147, 112, 219, 0.6),
+                0 0 100px rgba(147, 112, 219, 0.3),
+                inset 0 0 30px rgba(147, 112, 219, 0.2);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(45deg, #da70d6, #ba55d3, #9370db, #da70d6, #ba55d3);
+            border-radius: 50%;
+            z-index: -1;
+            animation: borderRotate 3s linear infinite;
+            filter: blur(2px);
+        }
+
+        /* Circuit pattern overlay */
+        .profile-img::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2364ffda' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: circuitPulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes circuitPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes borderRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-img img {
+            width: calc(100% - 8px);
+            height: calc(100% - 8px);
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes profilePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 60px rgba(147, 112, 219, 0.6), 0 0 100px rgba(147, 112, 219, 0.3);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 80px rgba(147, 112, 219, 0.8), 0 0 120px rgba(147, 112, 219, 0.4);
+            }
+        }
+
+        /* FUTURISTIC TYPOGRAPHY WITH GLITCH EFFECT */
+        .hero h1 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #da70d6 0%, #ba55d3 25%, #9370db 50%, #da70d6 75%, #ba55d3 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleFadeIn 1.5s ease-out 0.3s both, textShine 3s ease-in-out infinite, glitch 5s infinite;
+            text-shadow: 0 0 40px rgba(147, 112, 219, 0.8), 0 0 80px rgba(186, 85, 211, 0.4);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            position: relative;
+            filter: drop-shadow(0 4px 10px rgba(147, 112, 219, 0.6));
+        }
+
+        @keyframes textShine {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes glitch {
+
+            0%,
+            90%,
+            100% {
+                transform: translate(0);
+            }
+
+            92% {
+                transform: translate(-3px, 2px);
+            }
+
+            94% {
+                transform: translate(3px, -2px);
+            }
+
+            96% {
+                transform: translate(-2px, -3px);
+            }
+        }
+
+        @keyframes titleFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+                letter-spacing: 15px;
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                letter-spacing: 3px;
+            }
+        }
+
+        .hero .subtitle {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-size: 1.5rem;
+            color: #da70d6;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            animation: subtitleFadeIn 1.5s ease-out 0.6s both;
+            text-shadow: 0 0 30px rgba(147, 112, 219, 0.8), 0 0 60px rgba(186, 85, 211, 0.4);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        @keyframes subtitleFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .footer {
             text-align: left;
             padding: 4rem 2rem;
@@ -1443,66 +1736,80 @@
     </nav>
 
     <div class="container">
-        <div class="page-header">
+        <section class="hero">
+            <div class="profile-img">
+                <img src="../assets/profilepic.jpg" alt="Darsh Menon">
+            </div>
             <h1>About Me</h1>
-            <p>Passionate robotics engineer on a mission to revolutionize human-robot interaction and make advanced
-                robotics accessible to everyone.</p>
-        </div>
+            <div class="subtitle">Robotics Software Engineer</div>
+            <div style="max-width: 900px; color: rgba(255,255,255,0.9); line-height: 1.8; font-size: 1.1rem;">
+                <p style="margin-bottom: 1.5rem;">
+                    Architecting intelligent autonomous systems at the intersection of
+                    <span style="color: #da70d6; font-weight: 600;">AI, Perception, and Human-Robot Interaction</span>.
+                    Specializing in <strong>ROS 2</strong>, <strong>Computer Vision</strong>, and <strong>Reinforcement
+                        Learning</strong> to bridge the gap between human intent and machine execution.
+                </p>
+                <p>
+                    <strong>Mission:</strong> Democratizing <span style="color: #9370db; font-weight: 600;">Humanoid
+                        Robotics</span> as intelligent companions.
+                    Leveraging adaptive algorithms to build robots that seamlessly integrate into daily life, enhancing
+                    human potential through smart automation.
+                </p>
+            </div>
+        </section>
 
         <!-- Work Experience -->
         <section class="section">
-            <h2><i class="fas fa-rocket"></i> Work Experience</h2>
+            <h2>// Work Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">Feb 2025 - Present</div>
                     <div class="timeline-title">Robotics Software Engineer</div>
-                    <div class="timeline-company">Asimov Robotics, Kochi, Kerala</div>
-                    <div class="timeline-desc">
-                        Developed real-time multi-robot detection & navigation system for robotic chess tracking using
-                        ROS 2, OpenCV, and LED blink pattern recognition.
+                    <div class="timeline-company">Asimov Robotics, Kochi</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">ROS 2</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Multi-Robot Systems</span>
+                        <span class="tech-tag">Autonomous Navigation</span>
+                        <span class="tech-tag">RANSAC</span>
+                        <span class="tech-tag">WebSocket</span>
                     </div>
-                    <ul class="timeline-highlights">
-                        <li>Implemented dynamic robot localization & autonomous navigation with obstacle avoidance</li>
-                        <li>Applied RANSAC for ellipse fitting in LED detection for accurate pose estimation</li>
-                        <li>Built communication framework with ROS 2 & HTTP-based API for robot control</li>
-                        <li>Implemented WebSocket connections for remote humanoid teleoperation</li>
-                    </ul>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-date">June 2024 - Oct 2024</div>
                     <div class="timeline-title">Software Development Engineer - 1</div>
-                    <div class="timeline-company">Growth Jockey, Gurgaon, Haryana</div>
-                    <div class="timeline-desc">
-                        Developed dynamic web pages and admin panels with full-stack development (Remix, TypeScript,
-                        PostgreSQL).
+                    <div class="timeline-company">Growth Jockey, Gurgaon</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Full-Stack Development</span>
+                        <span class="tech-tag">Remix</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">FinTech Tools</span>
                     </div>
-                    <ul class="timeline-highlights">
-                        <li>Enabled real-time user interactions & payment processing</li>
-                        <li>Built financial tools like EMI & savings calculators</li>
-                    </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-date">July - Dec 2023</div>
-                    <div class="timeline-title">Software Development Engineer Intern</div>
-                    <div class="timeline-company">Growth Jockey, Gurgaon, Haryana</div>
-                    <div class="timeline-desc">
-                        Worked on web development projects, including rebranding and creating pages for multiple
-                        websites.
+                    <div class="timeline-date">July 2023 - Dec 2023</div>
+                    <div class="timeline-title">SDE Intern</div>
+                    <div class="timeline-company">Growth Jockey, Gurgaon</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Web Rebranding</span>
+                        <span class="tech-tag">Frontend Development</span>
+                        <span class="tech-tag">Lead Generation</span>
+                        <span class="tech-tag">130+ Pages Delivered</span>
                     </div>
-                    <ul class="timeline-highlights">
-                        <li>Led rebranding of Indiabulls to Sammaan Capital (130+ pages, 3500+ modifications)</li>
-                        <li>Developed SleepyHug & Livpure website pages with lead forms & city integration</li>
-                    </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-date">June - Aug 2022</div>
+                    <div class="timeline-date">June 2022 - Aug 2022</div>
                     <div class="timeline-title">Business Development Intern</div>
-                    <div class="timeline-company">Shriram Automall & CarTrade Exchange, Remote</div>
-                    <div class="timeline-desc">
-                        Analyzed Cars24's B2C pre-owned car market and provided insights for e-commerce expansion.
+                    <div class="timeline-company">Shriram Automall, Remote</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Market Analysis</span>
+                        <span class="tech-tag">E-commerce Strategy</span>
+                        <span class="tech-tag">Data Insights</span>
+                        <span class="tech-tag">B2C Expansion</span>
                     </div>
                 </div>
             </div>
@@ -1510,7 +1817,7 @@
 
         <!-- Education -->
         <section class="section">
-            <h2><i class="fas fa-graduation-cap"></i> Academic Qualification</h2>
+            <h2>// Academic Qualification</h2>
             <div class="education-grid">
                 <div class="education-card">
                     <div class="education-degree">Bachelor of Engineering (Honors), Mechanical Engineering</div>
