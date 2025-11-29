@@ -788,6 +788,16 @@
                 padding: 0.4rem 0.5rem !important;
             }
 
+            /* Hide work experience details on mobile */
+            .log-details {
+                display: none !important;
+            }
+
+            /* Reduce log entry spacing on mobile */
+            .log-entry {
+                margin-bottom: 1.5rem !important;
+            }
+
             /* Ensure paragraph text is white */
             p,
             .project-desc {
@@ -1226,143 +1236,77 @@
             z-index: 2;
         }
 
-        .timeline {
+        /* SYSTEM LOG TIMELINE */
+        .system-log {
+            font-family: 'JetBrains Mono', monospace;
             position: relative;
-            padding-left: 3rem;
-            z-index: 2;
+            padding-left: 2rem;
         }
 
-        .timeline::before {
+        .system-log::before {
             content: '';
             position: absolute;
-            left: 1rem;
+            left: 0;
             top: 0;
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(180deg, #9370db, #ba55d3, #9370db);
-            border-radius: 2px;
-            box-shadow: 0 0 15px rgba(147, 112, 219, 0.5);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: rgba(147, 112, 219, 0.05);
-            border: 1px solid rgba(147, 112, 219, 0.2);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            background: rgba(147, 112, 219, 0.1);
-            border-color: #ba55d3;
-            box-shadow: 0 0 30px rgba(147, 112, 219, 0.2);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.6rem;
-            top: 2.5rem;
-            width: 15px;
-            height: 15px;
-            background: #9370db;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
-            animation: pulse 2s ease-in-out infinite;
-            z-index: 3;
-        }
-
-        /* Connecting line from dot to card */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 2.9rem;
-            width: 2rem;
-            height: 2px;
-            background: #9370db;
-            opacity: 0.5;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
-            }
-
-            50% {
-                transform: scale(1.2);
-                box-shadow: 0 0 30px rgba(147, 112, 219, 0.9);
-            }
-        }
-
-        .timeline-date {
-            color: #da70d6;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            font-family: 'JetBrains Mono', monospace !important;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            padding: 0.2rem 0.8rem;
-            border: 1px solid rgba(218, 112, 214, 0.3);
-            border-radius: 20px;
-            background: rgba(218, 112, 214, 0.1);
-        }
-
-        .timeline-title {
-            font-size: 1.5rem;
-            color: white;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-            font-family: 'Space Grotesk', sans-serif !important;
-        }
-
-        .timeline-company {
-            color: #ba55d3;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .timeline-company i {
-            font-size: 0.9rem;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-
-        .tech-tag {
-            background: rgba(147, 112, 219, 0.15);
-            color: #e0e0e0;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-family: 'JetBrains Mono', monospace !important;
-            border: 1px solid rgba(147, 112, 219, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .tech-tag:hover {
+            bottom: 0;
+            width: 1px;
             background: rgba(147, 112, 219, 0.3);
-            border-color: #ba55d3;
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(147, 112, 219, 0.2);
+        }
+
+        .log-entry {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .log-entry::before {
+            content: '>';
+            position: absolute;
+            left: -0.4rem;
+            top: 0;
+            color: #9370db;
+            background: #0d0221;
+            padding: 0 0.2rem;
+            font-weight: bold;
+        }
+
+        .log-entry:hover {
+            transform: translateX(5px);
+        }
+
+        .log-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .log-time {
+            color: #da70d6;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .log-title {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .log-company {
+            color: #9370db;
+            font-size: 1rem;
+        }
+
+        .log-details {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+            border-left: 2px solid rgba(147, 112, 219, 0.2);
+            padding-left: 1rem;
         }
 
         .education-grid {
@@ -1834,24 +1778,26 @@
 
     <div class="container">
         <section class="hero">
-            <div class="profile-img">
-                <img src="../assets/profilepic.jpg" alt="Darsh Menon">
-            </div>
-            <h1>About Me</h1>
-            <div class="subtitle">Robotics Software Engineer</div>
-            <div style="max-width: 900px; color: rgba(255,255,255,0.9); line-height: 1.8; font-size: 1.1rem;">
-                <p style="margin-bottom: 1.5rem;">
-                    Architecting intelligent autonomous systems at the intersection of
-                    <span style="color: #da70d6; font-weight: 600;">AI, Perception, and Human-Robot Interaction</span>.
-                    Specializing in <strong>ROS 2</strong>, <strong>Computer Vision</strong>, and <strong>Reinforcement
-                        Learning</strong> to bridge the gap between human intent and machine execution.
-                </p>
-                <p>
-                    <strong>Mission:</strong> Democratizing <span style="color: #9370db; font-weight: 600;">Humanoid
-                        Robotics</span> as intelligent companions.
-                    Leveraging adaptive algorithms to build robots that seamlessly integrate into daily life, enhancing
-                    human potential through smart automation.
-                </p>
+            <div class="hero-content">
+                <h1>About Me</h1>
+                <div class="subtitle">Robotics Software Engineer</div>
+                <div style="max-width: 900px; color: rgba(255,255,255,0.9); line-height: 1.8; font-size: 1.1rem;">
+                    <p style="margin-bottom: 1.5rem;">
+                        Architecting intelligent autonomous systems at the intersection of
+                        <span style="color: #da70d6; font-weight: 600;">AI, Perception, and Human-Robot
+                            Interaction</span>.
+                        Specializing in <strong>ROS 2</strong>, <strong>Computer Vision</strong>, and
+                        <strong>Reinforcement
+                            Learning</strong> to bridge the gap between human intent and machine execution.
+                    </p>
+                    <p>
+                        <strong>Mission:</strong> Democratizing <span style="color: #9370db; font-weight: 600;">Humanoid
+                            Robotics</span> as intelligent companions.
+                        Leveraging adaptive algorithms to build robots that seamlessly integrate into daily life,
+                        enhancing
+                        human potential through smart automation.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -1866,55 +1812,51 @@
                 </div>
             </div>
             <div class="ui-content">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">Feb 2025 - Present</div>
-                        <div class="timeline-title">Robotics Software Engineer</div>
-                        <div class="timeline-company">Asimov Robotics, Kochi</div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">ROS 2</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">Multi-Robot Systems</span>
-                            <span class="tech-tag">Autonomous Navigation</span>
-                            <span class="tech-tag">RANSAC</span>
-                            <span class="tech-tag">WebSocket</span>
+                <div class="system-log">
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="log-time">[2025.02 - NOW]</span>
+                            <span class="log-title">ROBOTICS_SOFTWARE_ENGINEER</span>
+                            <span class="log-company">@ ASIMOV_ROBOTICS</span>
+                        </div>
+                        <div class="log-details">
+                            // Developing multi-robot navigation & perception systems<br>
+                            // Stack: ROS 2, OpenCV, RANSAC, WebSocket
                         </div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-date">June 2024 - Oct 2024</div>
-                        <div class="timeline-title">Software Development Engineer - 1</div>
-                        <div class="timeline-company">Growth Jockey, Gurgaon</div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Full-Stack Development</span>
-                            <span class="tech-tag">Remix</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">FinTech Tools</span>
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="log-time">[2024.06 - 2024.10]</span>
+                            <span class="log-title">SDE_1</span>
+                            <span class="log-company">@ GROWTH_JOCKEY</span>
+                        </div>
+                        <div class="log-details">
+                            // Full-stack development for FinTech tools<br>
+                            // Stack: Remix, TypeScript, PostgreSQL
                         </div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-date">July 2023 - Dec 2023</div>
-                        <div class="timeline-title">SDE Intern</div>
-                        <div class="timeline-company">Growth Jockey, Gurgaon</div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Web Rebranding</span>
-                            <span class="tech-tag">Frontend Development</span>
-                            <span class="tech-tag">Lead Generation</span>
-                            <span class="tech-tag">130+ Pages Delivered</span>
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="log-time">[2023.07 - 2023.12]</span>
+                            <span class="log-title">SDE_INTERN</span>
+                            <span class="log-company">@ GROWTH_JOCKEY</span>
+                        </div>
+                        <div class="log-details">
+                            // Web rebranding & frontend optimization<br>
+                            // Delivered 130+ pages
                         </div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-date">June 2022 - Aug 2022</div>
-                        <div class="timeline-title">Business Development Intern</div>
-                        <div class="timeline-company">Shriram Automall, Remote</div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Market Analysis</span>
-                            <span class="tech-tag">E-commerce Strategy</span>
-                            <span class="tech-tag">Data Insights</span>
-                            <span class="tech-tag">B2C Expansion</span>
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="log-time">[2022.06 - 2022.08]</span>
+                            <span class="log-title">BUSINESS_DEV_INTERN</span>
+                            <span class="log-company">@ SHRIRAM_AUTOMALL</span>
+                        </div>
+                        <div class="log-details">
+                            // Market analysis & e-commerce strategy
                         </div>
                     </div>
                 </div>
