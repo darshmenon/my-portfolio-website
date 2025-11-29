@@ -784,7 +784,7 @@
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: #9370db;
+            color: #da70d6;
             font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
             font-size: 1.2rem;
@@ -1219,15 +1219,25 @@
                 top: 10px;
                 left: 50%;
                 transform: translateX(-50%);
-                padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+                padding: 0.6rem 1rem;
                 max-width: calc(100vw - 20px);
                 width: auto;
                 border-radius: 25px;
             }
 
+            /* Hide arrow on mobile */
             .navbar::before {
-                left: 15px;
-                font-size: 1rem;
+                display: none;
+            }
+
+            /* Hide "Hub" text on mobile */
+            .mobile-hide {
+                display: none;
+            }
+
+            /* Ensure paragraph text is white */
+            p {
+                color: #ffffff !important;
             }
 
             .nav-links {
@@ -1328,7 +1338,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                        <span style="font-size: 2rem;">📧</span>
                     </div>
                     <div class="contact-details">
                         <h3>Email</h3>
@@ -1338,7 +1348,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
+                        <span style="font-size: 2rem;">🔗</span>
                     </div>
                     <div class="contact-details">
                         <h3>LinkedIn</h3>
@@ -1349,7 +1359,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <span style="font-size: 2rem;">📍</span>
                     </div>
                     <div class="contact-details">
                         <h3>Location</h3>
@@ -1359,7 +1369,7 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-robot"></i>
+                        <span style="font-size: 2rem;">🤖</span>
                     </div>
                     <div class="contact-details">
                         <h3>Specialization</h3>
