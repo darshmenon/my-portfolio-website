@@ -968,11 +968,11 @@
 
         .social-links-section h3 {
             color: #da70d6;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            text-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .social-links-grid {
@@ -985,24 +985,34 @@
         .social-link {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 1.5rem;
-            background: rgba(147, 112, 219, 0.1);
-            border: 1px solid rgba(147, 112, 219, 0.3);
-            border-radius: 12px;
-            color: #ffffff;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: transparent;
+            border: 1px solid rgba(147, 112, 219, 0.2);
+            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .social-link:hover {
-            background: rgba(147, 112, 219, 0.2);
+            background: rgba(147, 112, 219, 0.05);
             border-color: #da70d6;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(147, 112, 219, 0.4);
+            color: #ffffff;
+            transform: translateX(4px);
         }
+        .link-prefix {
+            color: #da70d6;
+            font-weight: 700;
+            opacity: 0.6;
+        }
+        
+        .social-link:hover .link-prefix {
+            opacity: 1;
+        }
+
 
         .social-link i {
             font-size: 1.3rem;
@@ -1038,9 +1048,19 @@
             }
 
             .social-link {
-                padding: 0.8rem 1rem;
-                font-size: 0.85rem;
-            }
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: transparent;
+            border: 1px solid rgba(147, 112, 219, 0.2);
+            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
 
             .social-link i {
                 font-size: 1.1rem;
@@ -1239,54 +1259,53 @@
         }
     </script>
 
-                        <footer class="footer">
+                            <footer class="footer">
         <div class="footer-content">
             <div class="social-links-section">
-                <h3>CONNECT WITH ME</h3>
+                <h3>// CONNECT</h3>
                 <div class="social-links-grid">
                     <a href="https://robocloud-dashboard.vercel.app" target="_blank" class="social-link">
-                        <span>RoboCloud App</span>
+                        <span class="link-prefix">></span> RoboCloud
                     </a>
                     <a href="https://github.com/darshmenon" target="_blank" class="social-link">
-                        <span>GitHub</span>
+                        <span class="link-prefix">></span> GitHub
                     </a>
                     <a href="https://linkedin.com/in/darsh-menon" target="_blank" class="social-link">
-                        <span>LinkedIn</span>
+                        <span class="link-prefix">></span> LinkedIn
                     </a>
                     <a href="https://x.com/darsh_menon" target="_blank" class="social-link">
-                        <span>X - @darsh_menon</span>
+                        <span class="link-prefix">></span> X @darsh_menon
                     </a>
                     <a href="https://x.com/Darsh_Menon_08" target="_blank" class="social-link">
-                        <span>X - @Darsh_Menon_08</span>
+                        <span class="link-prefix">></span> X @Darsh_Menon_08
                     </a>
                     <a href="https://medium.com/@darshmenon02" target="_blank" class="social-link">
-                        <span>Medium</span>
+                        <span class="link-prefix">></span> Medium
                     </a>
                     <a href="https://www.youtube.com/@darshmenon0008" target="_blank" class="social-link">
-                        <span>YouTube</span>
+                        <span class="link-prefix">></span> YouTube
                     </a>
                     <a href="https://instagram.com/_.darshmenon._" target="_blank" class="social-link">
-                        <span>Instagram</span>
+                        <span class="link-prefix">></span> Instagram
                     </a>
                     <a href="https://open.spotify.com/user/31qiavd6dklz2jp5zvhmbl63eu74" target="_blank" class="social-link">
-                        <span>Spotify</span>
+                        <span class="link-prefix">></span> Spotify
                     </a>
                     <a href="https://facebook.com/darsh.menon.9" target="_blank" class="social-link">
-                        <span>Facebook</span>
+                        <span class="link-prefix">></span> Facebook
                     </a>
                     <a href="https://in.pinterest.com/darshmenon/" target="_blank" class="social-link">
-                        <span>Pinterest</span>
+                        <span class="link-prefix">></span> Pinterest
                     </a>
                     <a href="https://www.chess.com/member/darshthegreat" target="_blank" class="social-link">
-                        <span>Chess.com</span>
+                        <span class="link-prefix">></span> Chess.com
                     </a>
                 </div>
             </div>
             
             <div class="footer-info">
-                <p>© 2025 Darsh Menon - Robotics Software Engineer | BITS Pilani Graduate | Asimov Robotics</p>
-                <p>"The only way to do great work is to love what you do." – Steve Jobs</p>
-                <p>Specializing in ROS2, Autonomous Systems, Computer Vision & AI-driven Robotics</p>
+                <p>© 2025 Darsh Menon // Robotics Software Engineer</p>
+                <p>BITS Pilani Graduate | Asimov Robotics</p>
             </div>
         </div>
     </footer>
