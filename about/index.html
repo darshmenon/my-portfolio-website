@@ -1693,31 +1693,11 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        .social-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.5rem 2rem;
-            margin-bottom: 2rem;
-        }
+        
 
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.4rem 0;
-            background: transparent;
-            border: none;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 0.9rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
+        
 
-        .social-link:hover {
-            color: #da70d6;
-            transform: translateX(5px);
-        }
+        
         .link-prefix {
             color: #da70d6;
             font-weight: 700;
@@ -1748,35 +1728,12 @@
         }
 
 
-        .footer-info {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(147, 112, 219, 0.2);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
+        
 
         @media (max-width: 768px) {
-            .social-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.5rem 2rem;
-            margin-bottom: 2rem;
-        }
+            
 
-            .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.4rem 0;
-            background: transparent;
-            border: none;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 0.9rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
+            
 
             .social-link i {
                 font-size: 1.1rem;
@@ -1866,6 +1823,64 @@
             pointer-events: none;
             z-index: 0;
         }
+    
+        .footer-terminal {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .terminal-header {
+            background: rgba(147, 112, 219, 0.1);
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid rgba(147, 112, 219, 0.2);
+        }
+
+        .terminal-title {
+            color: #da70d6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .terminal-body {
+            padding: 2rem 1.5rem;
+        }
+
+        
+
+        
+
+        
+
+        .cmd-symbol {
+            color: #9370db;
+            font-weight: 700;
+        }
+
+        .social-link:hover .cmd-symbol {
+            color: #ba55d3;
+        }
+
+        
+
+        .footer-info p {
+            margin: 0.3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .terminal-body {
+                padding: 1.5rem 1rem;
+            }
+
+            
+
+            
+        }
+
     </style>
 </head>
 
@@ -2051,53 +2066,56 @@
         }
     </script>
 
-                        <footer class="footer">
+                            <footer class="footer">
         <div class="footer-content">
-            <div class="social-links-section">
-                <h3>// CONNECT</h3>
-                <div class="social-links-grid">
-                    <a href="https://robocloud-dashboard.vercel.app" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> RoboCloud
-                    </a>
-                    <a href="https://github.com/darshmenon" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> GitHub
-                    </a>
-                    <a href="https://linkedin.com/in/darsh-menon" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> LinkedIn
-                    </a>
-                    <a href="https://x.com/darsh_menon" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> X @darsh_menon
-                    </a>
-                    <a href="https://x.com/Darsh_Menon_08" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> X @Darsh_Menon_08
-                    </a>
-                    <a href="https://medium.com/@darshmenon02" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> Medium
-                    </a>
-                    <a href="https://www.youtube.com/@darshmenon0008" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> YouTube
-                    </a>
-                    <a href="https://instagram.com/_.darshmenon._" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> Instagram
-                    </a>
-                    <a href="https://open.spotify.com/user/31qiavd6dklz2jp5zvhmbl63eu74" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> Spotify
-                    </a>
-                    <a href="https://facebook.com/darsh.menon.9" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> Facebook
-                    </a>
-                    <a href="https://in.pinterest.com/darshmenon/" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> Pinterest
-                    </a>
-                    <a href="https://www.chess.com/member/darshthegreat" target="_blank" class="social-link">
-                        <span class="link-prefix">></span> Chess.com
-                    </a>
+            <div class="footer-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-title">darsh@connect:~$</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="social-links-grid">
+                        <a href="https://robocloud-dashboard.vercel.app" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./robocloud
+                        </a>
+                        <a href="https://github.com/darshmenon" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./github
+                        </a>
+                        <a href="https://linkedin.com/in/darsh-menon" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./linkedin
+                        </a>
+                        <a href="https://x.com/darsh_menon" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./x_main
+                        </a>
+                        <a href="https://x.com/Darsh_Menon_08" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./x_alt
+                        </a>
+                        <a href="https://medium.com/@darshmenon02" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./medium
+                        </a>
+                        <a href="https://www.youtube.com/@darshmenon0008" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./youtube
+                        </a>
+                        <a href="https://instagram.com/_.darshmenon._" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./instagram
+                        </a>
+                        <a href="https://open.spotify.com/user/31qiavd6dklz2jp5zvhmbl63eu74" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./spotify
+                        </a>
+                        <a href="https://facebook.com/darsh.menon.9" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./facebook
+                        </a>
+                        <a href="https://in.pinterest.com/darshmenon/" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./pinterest
+                        </a>
+                        <a href="https://www.chess.com/member/darshthegreat" target="_blank" class="social-link">
+                            <span class="cmd-symbol">$</span> ./chess
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-info">
-                <p>© 2025 Darsh Menon // Robotics Software Engineer</p>
-                <p>BITS Pilani Graduate | Asimov Robotics</p>
+                <p>© 2025 Darsh Menon | Robotics Software Engineer | BITS Pilani | Asimov Robotics</p>
             </div>
         </div>
     </footer>
