@@ -790,6 +790,7 @@
                 padding: 0.6rem 1rem;
                 width: 100%;
                 border-radius: 0;
+                transform: none;
             }
 
             /* Hide arrow on mobile */
@@ -799,41 +800,19 @@
 
             .nav-links {
                 gap: 0;
-                flex-wrap: nowrap !important;
+                flex-wrap: wrap;
                 justify-content: center;
             }
 
             .nav-links a {
-                font-size: 0.65rem !important;
-                padding: 0.3rem 0 !important;
-            }
-
-            /* Hide arrow on mobile */
-            .navbar::before {
-                display: none;
+                font-size: 0.65rem;
+                padding: 0.3rem 0;
             }
 
             /* Ensure paragraph text is white */
             p,
             .project-desc {
                 color: #ffffff !important;
-            }
-
-            /* Ensure paragraph text is white */
-            p {
-                color: #ffffff !important;
-            }
-
-            .navbar:active,
-            .navbar:focus,
-            .navbar:focus-within {
-                transform: none !important;
-                left: 10px !important;
-                right: 10px !important;
-            }
-
-            .nav-links a:active {
-                transform: none !important;
             }
 
             .container {
@@ -847,11 +826,6 @@
 
             .section {
                 padding: 2.5rem 1.5rem;
-            }
-
-            .page-header h1 {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
             }
 
             .navbar:hover {
