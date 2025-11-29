@@ -783,30 +783,32 @@
             }
 
             .navbar {
-                position: fixed;
-                top: 10px;
-                left: 0;
-                right: 0;
-                padding: 0.6rem 1rem;
-                width: 100%;
-                border-radius: 0;
-                transform: none;
+                position: fixed !important;
+                top: 10px !important;
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) !important;
+                padding: 0.6rem 1.5rem !important;
+                width: calc(100% - 20px) !important;
+                max-width: calc(100vw - 20px) !important;
+                border-radius: 15px !important;
+                margin: 0 auto !important;
             }
 
             /* Hide arrow on mobile */
             .navbar::before {
-                display: none;
+                display: none !important;
             }
 
             .nav-links {
-                gap: 0;
-                flex-wrap: wrap;
-                justify-content: center;
+                gap: 0.8rem !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
             }
 
             .nav-links a {
-                font-size: 0.65rem;
-                padding: 0.3rem 0;
+                font-size: 0.7rem !important;
+                padding: 0.4rem 0.5rem !important;
             }
 
             /* Ensure paragraph text is white */
