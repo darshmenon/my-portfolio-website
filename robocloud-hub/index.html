@@ -1175,6 +1175,237 @@
             opacity: 0.05;
             pointer-events: none;
         }
+
+        /* SYSTEM STATS HUD */
+        .system-stats {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(147, 112, 219, 0.5);
+            border-radius: 8px;
+            padding: 0.8rem 1.2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #00ff00;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(147, 112, 219, 0.3);
+            min-width: 200px;
+        }
+
+        .system-stats-header {
+            color: #da70d6;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(147, 112, 219, 0.3);
+            padding-bottom: 0.3rem;
+        }
+
+        .stat-line {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.3rem 0;
+            color: #00ff00;
+        }
+
+        .stat-label {
+            color: #9370db;
+        }
+
+        .stat-value {
+            color: #00ff00;
+            font-weight: 700;
+        }
+
+        .status-indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #00ff00;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @media (max-width: 768px) {
+            .system-stats {
+                display: none;
+            }
+        }
+
+        /* GLITCH EFFECT */
+        .glitch {
+            position: relative;
+            animation: glitch-skew 1s infinite;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ffff, 2px 2px #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            20% { clip: rect(60px, 9999px, 73px, 0); }
+            40% { clip: rect(10px, 9999px, 85px, 0); }
+            60% { clip: rect(76px, 9999px, 11px, 0); }
+            80% { clip: rect(93px, 9999px, 52px, 0); }
+            100% { clip: rect(2px, 9999px, 61px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            20% { clip: rect(52px, 9999px, 74px, 0); }
+            40% { clip: rect(79px, 9999px, 85px, 0); }
+            60% { clip: rect(2px, 9999px, 40px, 0); }
+            80% { clip: rect(18px, 9999px, 83px, 0); }
+            100% { clip: rect(44px, 9999px, 29px, 0); }
+        }
+
+        @keyframes glitch-skew {
+            0% { transform: skew(0deg); }
+            10% { transform: skew(-2deg); }
+            20% { transform: skew(2deg); }
+            30% { transform: skew(0deg); }
+            100% { transform: skew(0deg); }
+        }
+
+        /* ASCII ART HEADER */
+        .ascii-robot {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.5rem;
+            line-height: 0.6rem;
+            color: rgba(147, 112, 219, 0.3);
+            z-index: -1;
+            white-space: pre;
+            pointer-events: none;
+        }
+
+        @media (max-width: 1200px) {
+            .ascii-robot { display: none; }
+        }
+
+        /* NETWORK ACTIVITY */
+        .network-activity {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            border-radius: 6px;
+            padding: 0.6rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #00ff00;
+            z-index: 9998;
+            min-width: 150px;
+        }
+
+        .network-header {
+            color: #00ff00;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+            padding-bottom: 0.2rem;
+        }
+
+        .network-bar {
+            height: 4px;
+            background: rgba(0, 255, 0, 0.2);
+            margin: 0.3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .network-bar::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 70%;
+            background: #00ff00;
+            animation: networkPulse 2s infinite;
+        }
+
+        @keyframes networkPulse {
+            0%, 100% { width: 30%; }
+            50% { width: 90%; }
+        }
+
+        @media (max-width: 768px) {
+            .network-activity { display: none; }
+        }
+
+        /* CONSOLE LOG */
+        .console-log {
+            position: fixed;
+            bottom: 80px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid rgba(147, 112, 219, 0.5);
+            border-radius: 6px;
+            padding: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: #00ff00;
+            z-index: 9998;
+            max-width: 300px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .console-log::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .console-log::-webkit-scrollbar-thumb {
+            background: rgba(147, 112, 219, 0.5);
+        }
+
+        .log-entry {
+            margin: 0.2rem 0;
+            opacity: 0;
+            animation: logFadeIn 0.3s ease forwards;
+        }
+
+        @keyframes logFadeIn {
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .console-log { display: none; }
+        }
     </style>
 </head>
 
@@ -1444,6 +1675,118 @@
             </div>
         </div>
     </footer>
+    <!-- System Stats HUD -->
+    <div class="system-stats">
+        <div class="system-stats-header">
+            <span class="status-indicator"></span>
+            SYSTEM_MONITOR
+        </div>
+        <div class="stat-line">
+            <span class="stat-label">CPU:</span>
+            <span class="stat-value" id="cpu-stat">23%</span>
+        </div>
+        <div class="stat-line">
+            <span class="stat-label">RAM:</span>
+            <span class="stat-value" id="ram-stat">4.2 GB</span>
+        </div>
+        <div class="stat-line">
+            <span class="stat-label">NET:</span>
+            <span class="stat-value" id="net-stat">↓ 2.4 MB/s</span>
+        </div>
+        <div class="stat-line">
+            <span class="stat-label">UPTIME:</span>
+            <span class="stat-value" id="uptime-stat">00:00</span>
+        </div>
+    </div>
+
+    <script>
+        // Animated system stats
+        let startTime = Date.now();
+        
+        function updateStats() {
+            // CPU (random between 15-35%)
+            document.getElementById('cpu-stat').textContent = (Math.random() * 20 + 15).toFixed(1) + '%';
+            
+            // RAM (random between 3.8-5.2 GB)
+            document.getElementById('ram-stat').textContent = (Math.random() * 1.4 + 3.8).toFixed(1) + ' GB';
+            
+            // Network (random speed)
+            const speed = (Math.random() * 3 + 1).toFixed(1);
+            document.getElementById('net-stat').textContent = '↓ ' + speed + ' MB/s';
+            
+            // Uptime
+            const uptime = Math.floor((Date.now() - startTime) / 1000);
+            const mins = Math.floor(uptime / 60);
+            const secs = uptime % 60;
+            document.getElementById('uptime-stat').textContent = 
+                String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+        }
+        
+        setInterval(updateStats, 1000);
+        updateStats();
+    </script>
+
+    <!-- ASCII Robot Art -->
+    <div class="ascii-robot">
+        ___T_
+       |o o o|
+       |o o o|
+       |o o o|
+      /|o o o|\
+     /_|o_o_o|_\
+       | | | |
+      /| | | |\
+     /_|_|_|_|_\
+        ROBOT
+      PORTFOLIO
+    </div>
+
+    <!-- Network Activity -->
+    <div class="network-activity">
+        <div class="network-header">⚡ NETWORK</div>
+        <div style="font-size: 0.65rem; margin: 0.2rem 0;">↓ DOWNLOAD</div>
+        <div class="network-bar"></div>
+        <div style="font-size: 0.65rem; margin: 0.2rem 0;">↑ UPLOAD</div>
+        <div class="network-bar" style="animation-delay: 0.5s;"></div>
+        <div style="font-size: 0.65rem; margin-top: 0.3rem; color: #00ffff;">STATUS: ACTIVE</div>
+    </div>
+
+    <!-- Console Log -->
+    <div class="console-log" id="consoleLog">
+        <div class="log-entry" style="animation-delay: 0s;">[00:00:01] System initialized</div>
+        <div class="log-entry" style="animation-delay: 0.3s;">[00:00:02] Loading modules...</div>
+        <div class="log-entry" style="animation-delay: 0.6s;">[00:00:03] Connecting to server</div>
+        <div class="log-entry" style="animation-delay: 0.9s;">[00:00:04] Assets loaded</div>
+        <div class="log-entry" style="animation-delay: 1.2s;">[00:00:05] Ready</div>
+    </div>
+
+    <script>
+        // Add new log entries periodically
+        const logs = [
+            'Processing request...',
+            'Cache updated',
+            'WebSocket connected',
+            'Data synced',
+            'Module loaded'
+        ];
+        let logTime = 6;
+        setInterval(() => {
+            const consoleLog = document.getElementById('consoleLog');
+            if (consoleLog && consoleLog.children.length < 8) {
+                const entry = document.createElement('div');
+                entry.className = 'log-entry';
+                const msg = logs[Math.floor(Math.random() * logs.length)];
+                entry.textContent = `[00:00:${String(logTime++).padStart(2, '0')}] ${msg}`;
+                consoleLog.appendChild(entry);
+                
+                // Remove old entries
+                if (consoleLog.children.length > 8) {
+                    consoleLog.removeChild(consoleLog.firstChild);
+                }
+            }
+        }, 5000);
+    </script>
+
 </body>
 
 </html>
