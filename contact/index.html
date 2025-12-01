@@ -39,7 +39,7 @@
         /* ENHANCED BODY WITH FONT FIXES */
         body,
         body * {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
         }
 
         body {
@@ -310,7 +310,7 @@
         }
 
         .page-header h1 {
-            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
             font-size: 3rem;
             background: linear-gradient(135deg, #9370db 0%, #ba55d3 25%, #9370db 50%, #ba55d3 75%, #9370db 100%);
             background-size: 200% 200%;
@@ -382,7 +382,7 @@
         }
 
         .section-title {
-            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
             font-size: 2rem;
             color: #9370db;
             margin-bottom: 2rem;
@@ -550,7 +550,7 @@
         }
 
         .chess-title {
-            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
             font-size: 2rem;
             color: white;
             font-weight: 700;
@@ -649,7 +649,7 @@
         /* ENHANCED BODY WITH FONT FIXES */
         body,
         body * {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
         }
 
         body {
@@ -947,7 +947,7 @@
         }
 
         .section-title {
-            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
             font-size: 2.5rem;
             color: #9370db;
             margin-bottom: 2rem;
@@ -1115,7 +1115,7 @@
         }
 
         .chess-title {
-            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+            font-family: 'JetBrains Mono', monospace !important;
             font-size: 2rem;
             color: white;
             font-weight: 700;
@@ -1489,10 +1489,63 @@
             padding: 3rem;
             position: relative;
         }
+
+        /* MATRIX CODE RAIN EFFECT */
+        .matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            opacity: 0.05;
+            pointer-events: none;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Matrix Code Rain Background -->
+    <canvas class="matrix-canvas" id="matrixCanvas"></canvas>
+
+    <script>
+        // Matrix Code Rain Effect
+        const canvas = document.getElementById('matrixCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = Array(Math.floor(columns)).fill(1);
+
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#9370db';
+                ctx.font = fontSize + 'px JetBrains Mono';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(drawMatrix, 50);
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+    </script>
+
     <div class="particles"></div>
 
     <nav class="navbar">
