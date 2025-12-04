@@ -12,19 +12,11 @@
     <loc>https://darshmenon.github.io/my-portfolio-website/about/</loc>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://darshmenon.github.io/my-portfolio-website/about.html</loc>
-    <priority>0.7</priority>
-  </url>
 
   <!-- Blog pages -->
   <url>
     <loc>https://darshmenon.github.io/my-portfolio-website/blog/</loc>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://darshmenon.github.io/my-portfolio-website/blog.html</loc>
-    <priority>0.7</priority>
   </url>
 
   <!-- Contact pages -->
@@ -32,9 +24,17 @@
     <loc>https://darshmenon.github.io/my-portfolio-website/contact/</loc>
     <priority>0.8</priority>
   </url>
+
+  <!-- Projects pages -->
   <url>
-    <loc>https://darshmenon.github.io/my-portfolio-website/contact.html</loc>
-    <priority>0.7</priority>
+    <loc>https://darshmenon.github.io/my-portfolio-website/projects/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- RoboCloud Hub -->
+  <url>
+    <loc>https://darshmenon.github.io/my-portfolio-website/robocloud-hub/</loc>
+    <priority>0.8</priority>
   </url>
 
   <!-- Google verification file -->
